@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0d0f;
+    color: #ffffff;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+.contenedor {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+
+/* ============================= */
+/* ENCABEZADO                    */
+/* ============================= */
+
+.encabezado {
+    width: 100%;
+    background-color: rgba(13, 13, 15, 0.96);
+    border-bottom: 1px solid #252529;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.navegacion {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    color: #a21d35;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+
+.menu a {
+    color: #bdbdc2;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+
+.menu a:hover,
+.menu .activo {
+    color: #ffffff;
+}
+
+
+.menu .boton-login {
+    border: 1px solid #44444a;
+    padding: 11px 18px;
+    border-radius: 7px;
+    color: #ffffff;
+}
+
+
+.menu .boton-login:hover {
+    border-color: #a21d35;
+    background-color: #a21d35;
+}
+
+
+/* ============================= */
+/* HERO                          */
+/* ============================= */
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(162, 29, 53, 0.18),
+            transparent 35%
+        ),
+        #0d0d0f;
+}
+
+
+.contenido-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 90px;
+}
+
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: #c32947;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+}
+
+
+.texto-hero h1 {
+    max-width: 720px;
+    font-size: clamp(3rem, 6vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    margin-bottom: 28px;
+}
+
+
+.texto-hero h1 span {
+    color: #a21d35;
+}
+
+
+.descripcion-hero {
+    max-width: 600px;
+    color: #aaaab0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 38px;
+}
+
+
+.botones-hero {
+    display: flex;
+    gap: 14px;
+}
+
+
+.boton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 24px;
+    border-radius: 7px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+
+.boton-principal {
+    background-color: #a21d35;
+    border: 1px solid #a21d35;
+}
+
+
+.boton-principal:hover {
+    background-color: #bd2745;
+    border-color: #bd2745;
+    transform: translateY(-2px);
+}
+
+
+.boton-secundario {
+    background-color: transparent;
+    border: 1px solid #3b3b40;
+}
+
+
+.boton-secundario:hover {
+    background-color: #19191d;
+    border-color: #55555b;
+}
+
+
+/* ============================= */
+/* TARJETA HERO                  */
+/* ============================= */
+
+.tarjeta-presentacion {
+    position: relative;
+    padding: 55px 45px;
+    border: 1px solid #29292e;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.01)
+        );
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+
+.tarjeta-presentacion::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    top: 0;
+    left: 45px;
+    background-color: #a21d35;
+}
+
+
+.icono-auto {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #18181c;
+    border: 1px solid #303035;
+    border-radius: 15px;
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+
+
+.tarjeta-etiqueta {
+    color: #a21d35;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 1.8px;
+    margin-bottom: 14px;
+}
+
+
+.tarjeta-presentacion h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+
+.tarjeta-presentacion > p:last-child {
+    color: #99999f;
+    line-height: 1.7;
+}
+
+
+/* ============================= */
+/* INFORMACIÓN                   */
+/* ============================= */
+
+.informacion {
+    padding: 110px 0;
+    background-color: #131316;
+    border-top: 1px solid #222226;
+}
+
+
+.encabezado-seccion {
+    margin-bottom: 55px;
+}
+
+
+.encabezado-seccion > p {
+    color: #a21d35;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+
+.encabezado-seccion h2 {
+    max-width: 650px;
+    font-size: 2.4rem;
+    letter-spacing: -1px;
+}
+
+
+.caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.caracteristica {
+    padding: 35px;
+    background-color: #18181c;
+    border: 1px solid #29292e;
+    border-radius: 12px;
+}
+
+
+.caracteristica span {
+    display: inline-block;
+    color: #a21d35;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+
+.caracteristica h3 {
+    font-size: 1.15rem;
+    margin-bottom: 13px;
+}
+
+
+.caracteristica p {
+    color: #99999f;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+
+/* ============================= */
+/* PIE DE PÁGINA                 */
+/* ============================= */
+
+.pie {
+    padding: 30px 0;
+    background-color: #09090b;
+    border-top: 1px solid #242428;
+}
+
+
+.contenido-pie {
+    display: flex;
+    justify-content: space-between;
+    color: #68686e;
+    font-size: 0.78rem;
+}
+
+
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
+
+@media (max-width: 850px) {
+
+    .menu {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: auto;
+        padding: 90px 0;
+    }
+
+
+    .contenido-hero {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+
+    .texto-hero h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .caracteristicas {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contenido-pie {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .botones-hero {
+        flex-direction: column;
+    }
+
+
+    .boton {
+        width: 100%;
+    }
+
+
+    .tarjeta-presentacion {
+        padding: 40px 28px;
+    }
+
+}
