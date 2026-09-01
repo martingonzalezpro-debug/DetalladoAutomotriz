@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family: 'Inter', sans-serif;
@@ -19,27 +16,21 @@ body {
     color: #ffffff;
 }
 
-
 a {
     text-decoration: none;
     color: inherit;
 }
 
-
 ul {
     list-style: none;
 }
-
 
 .contenedor {
     width: min(1180px, 90%);
     margin: 0 auto;
 }
 
-
-/* ============================= */
-/* ENCABEZADO                    */
-/* ============================= */
+/* encabezado */
 
 .encabezado {
     width: 100%;
@@ -50,7 +41,6 @@ ul {
     z-index: 100;
 }
 
-
 .navegacion {
     min-height: 78px;
     display: flex;
@@ -58,25 +48,21 @@ ul {
     justify-content: space-between;
 }
 
-
 .logo {
     font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: 1px;
 }
 
-
 .logo span {
     color: #a21d35;
 }
-
 
 .menu {
     display: flex;
     align-items: center;
     gap: 32px;
 }
-
 
 .menu a {
     color: #bdbdc2;
@@ -85,12 +71,10 @@ ul {
     transition: 0.25s ease;
 }
 
-
 .menu a:hover,
 .menu .activo {
     color: #ffffff;
 }
-
 
 .menu .boton-login {
     border: 1px solid #44444a;
@@ -99,22 +83,17 @@ ul {
     color: #ffffff;
 }
 
-
 .menu .boton-login:hover {
     border-color: #a21d35;
     background-color: #a21d35;
 }
 
-
-/* ============================= */
-/* HERO                          */
-/* ============================= */
+/* hero */
 
 .hero {
     min-height: 680px;
     display: flex;
     align-items: center;
-
     background:
         radial-gradient(
             circle at 75% 40%,
@@ -124,14 +103,12 @@ ul {
         #0d0d0f;
 }
 
-
 .contenido-hero {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
     gap: 90px;
 }
-
 
 .etiqueta {
     display: inline-block;
@@ -142,7 +119,6 @@ ul {
     letter-spacing: 2.4px;
 }
 
-
 .texto-hero h1 {
     max-width: 720px;
     font-size: clamp(3rem, 6vw, 5.6rem);
@@ -151,11 +127,9 @@ ul {
     margin-bottom: 28px;
 }
 
-
 .texto-hero h1 span {
     color: #a21d35;
 }
-
 
 .descripcion-hero {
     max-width: 600px;
@@ -165,12 +139,10 @@ ul {
     margin-bottom: 38px;
 }
 
-
 .botones-hero {
     display: flex;
     gap: 14px;
 }
-
 
 .boton {
     display: inline-flex;
@@ -184,12 +156,10 @@ ul {
     transition: 0.25s ease;
 }
 
-
 .boton-principal {
     background-color: #a21d35;
     border: 1px solid #a21d35;
 }
-
 
 .boton-principal:hover {
     background-color: #bd2745;
@@ -197,39 +167,31 @@ ul {
     transform: translateY(-2px);
 }
 
-
 .boton-secundario {
     background-color: transparent;
     border: 1px solid #3b3b40;
 }
-
 
 .boton-secundario:hover {
     background-color: #19191d;
     border-color: #55555b;
 }
 
-
-/* ============================= */
-/* TARJETA HERO                  */
-/* ============================= */
+/* tarjeta */
 
 .tarjeta-presentacion {
     position: relative;
     padding: 55px 45px;
     border: 1px solid #29292e;
     border-radius: 18px;
-
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.04),
-            rgba(255,255,255,0.01)
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.01)
         );
-
-    box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
-
 
 .tarjeta-presentacion::before {
     content: "";
@@ -240,7 +202,6 @@ ul {
     left: 45px;
     background-color: #a21d35;
 }
-
 
 .icono-auto {
     width: 72px;
@@ -255,7 +216,6 @@ ul {
     margin-bottom: 35px;
 }
 
-
 .tarjeta-etiqueta {
     color: #a21d35;
     font-weight: 700;
@@ -264,23 +224,18 @@ ul {
     margin-bottom: 14px;
 }
 
-
 .tarjeta-presentacion h2 {
     font-size: 2rem;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 
-
 .tarjeta-presentacion > p:last-child {
     color: #99999f;
     line-height: 1.7;
 }
 
-
-/* ============================= */
-/* INFORMACIÓN                   */
-/* ============================= */
+/* informacion */
 
 .informacion {
     padding: 110px 0;
@@ -288,11 +243,9 @@ ul {
     border-top: 1px solid #222226;
 }
 
-
 .encabezado-seccion {
     margin-bottom: 55px;
 }
-
 
 .encabezado-seccion > p {
     color: #a21d35;
@@ -302,13 +255,11 @@ ul {
     margin-bottom: 13px;
 }
 
-
 .encabezado-seccion h2 {
     max-width: 650px;
     font-size: 2.4rem;
     letter-spacing: -1px;
 }
-
 
 .caracteristicas {
     display: grid;
@@ -316,14 +267,12 @@ ul {
     gap: 20px;
 }
 
-
 .caracteristica {
     padding: 35px;
     background-color: #18181c;
     border: 1px solid #29292e;
     border-radius: 12px;
 }
-
 
 .caracteristica span {
     display: inline-block;
@@ -333,12 +282,10 @@ ul {
     margin-bottom: 35px;
 }
 
-
 .caracteristica h3 {
     font-size: 1.15rem;
     margin-bottom: 13px;
 }
-
 
 .caracteristica p {
     color: #99999f;
@@ -346,17 +293,32 @@ ul {
     line-height: 1.7;
 }
 
+/* paginas */
 
-/* ============================= */
-/* PIE DE PÁGINA                 */
-/* ============================= */
+.pagina {
+    min-height: calc(100vh - 78px);
+    padding: 120px 0;
+}
+
+.pagina h1 {
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.pagina > .contenedor > p:last-child {
+    color: #99999f;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* footer */
 
 .pie {
     padding: 30px 0;
     background-color: #09090b;
     border-top: 1px solid #242428;
 }
-
 
 .contenido-pie {
     display: flex;
@@ -365,10 +327,7 @@ ul {
     font-size: 0.78rem;
 }
 
-
-/* ============================= */
-/* RESPONSIVE                    */
-/* ============================= */
+/* responsive */
 
 @media (max-width: 850px) {
 
@@ -376,36 +335,33 @@ ul {
         display: none;
     }
 
-
     .hero {
         min-height: auto;
         padding: 90px 0;
     }
-
 
     .contenido-hero {
         grid-template-columns: 1fr;
         gap: 60px;
     }
 
-
     .texto-hero h1 {
         letter-spacing: -2px;
     }
 
-
     .caracteristicas {
         grid-template-columns: 1fr;
     }
-
 
     .contenido-pie {
         flex-direction: column;
         gap: 10px;
     }
 
+    .pagina h1 {
+        font-size: 2.6rem;
+    }
 }
-
 
 @media (max-width: 500px) {
 
@@ -413,14 +369,15 @@ ul {
         flex-direction: column;
     }
 
-
     .boton {
         width: 100%;
     }
-
 
     .tarjeta-presentacion {
         padding: 40px 28px;
     }
 
+    .pagina {
+        padding: 80px 0;
+    }
 }
