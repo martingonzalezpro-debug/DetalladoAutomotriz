@@ -639,6 +639,65 @@ textarea {
     margin-bottom: 30px;
 }
 
+.titulo-detalle {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.texto-detalle {
+    color: #99999f;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* acceso */
+
+.acceso {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.acceso-texto h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.acceso-texto > p:last-child {
+    color: #99999f;
+    line-height: 1.7;
+}
+
+.acceso-formulario {
+    padding: 35px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.boton-acceso {
+    width: 100%;
+    border: none;
+}
+
+.cambio-acceso {
+    margin-top: 25px;
+    text-align: center;
+    color: #88888e;
+    font-size: 0.85rem;
+}
+
+.cambio-acceso a {
+    color: #c32947;
+}
+
+.cambio-acceso a:hover {
+    text-decoration: underline;
+}
+
 /* footer */
 
 .pie {
@@ -691,6 +750,11 @@ textarea {
     }
 
     .detalle-servicio {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .acceso {
         grid-template-columns: 1fr;
         gap: 40px;
     }
@@ -748,5 +812,13 @@ textarea {
 
     .detalle-imagen {
         min-height: 280px;
+    }
+
+    .acceso-texto h1 {
+        font-size: 2.4rem;
+    }
+
+    .acceso-formulario {
+        padding: 25px 20px;
     }
 }

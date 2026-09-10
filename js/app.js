@@ -19,3 +19,45 @@ if (formularioContacto) {
     });
 
 }
+
+
+const formularioRegistro = document.getElementById("formulario-registro");
+
+if (formularioRegistro) {
+
+    formularioRegistro.addEventListener("submit", function(evento) {
+
+        evento.preventDefault();
+
+        const mensajeRegistro = document.getElementById("registro-exito");
+
+        mensajeRegistro.classList.add("mostrar");
+
+        setTimeout(function() {
+            window.location.href = "login.html";
+        }, 1200);
+
+    });
+
+}
+
+
+const formularioLogin = document.getElementById("formulario-login");
+
+if (formularioLogin) {
+
+    formularioLogin.addEventListener("submit", function(evento) {
+
+        evento.preventDefault();
+
+        const mensajeLogin = document.getElementById("login-exito");
+
+        mensajeLogin.classList.add("mostrar");
+
+        setTimeout(function() {
+            window.location.href = "perfil.html";
+        }, 1200);
+
+    });
+
+}

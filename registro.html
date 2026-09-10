@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Iniciar sesión | Dr. Chulo</title>
+    <title>Registro | Dr. Chulo</title>
 
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -56,16 +56,16 @@
                     <div class="acceso-texto">
 
                         <p class="etiqueta">
-                            CUENTA
+                            REGISTRO
                         </p>
 
                         <h1>
-                            Iniciar sesión
+                            Crea tu cuenta
                         </h1>
 
                         <p>
-                            Ingresa con tu correo y contraseña
-                            para acceder a tu perfil.
+                            Regístrate para acceder a tu perfil
+                            y consultar las opciones disponibles.
                         </p>
 
                     </div>
@@ -73,17 +73,33 @@
 
                     <div class="acceso-formulario">
 
-                        <form id="formulario-login">
+                        <form id="formulario-registro">
 
                             <div class="campo">
 
-                                <label for="correo-login">
+                                <label for="nombre-registro">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombre-registro"
+                                    placeholder="Escribe tu nombre"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="correo-registro">
                                     Correo electrónico
                                 </label>
 
                                 <input
                                     type="email"
-                                    id="correo-login"
+                                    id="correo-registro"
                                     placeholder="correo@ejemplo.com"
                                     required
                                 >
@@ -93,14 +109,14 @@
 
                             <div class="campo">
 
-                                <label for="contrasena-login">
+                                <label for="contrasena-registro">
                                     Contraseña
                                 </label>
 
                                 <input
                                     type="password"
-                                    id="contrasena-login"
-                                    placeholder="Escribe tu contraseña"
+                                    id="contrasena-registro"
+                                    placeholder="Escribe una contraseña"
                                     required
                                 >
 
@@ -111,24 +127,24 @@
                                 type="submit"
                                 class="boton boton-principal boton-acceso"
                             >
-                                Entrar
+                                Registrarme
                             </button>
 
 
                             <div
-                                id="login-exito"
+                                id="registro-exito"
                                 class="mensaje-exito"
                             >
-                                Inicio de sesión correcto.
+                                Registro exitoso.
                             </div>
 
                         </form>
 
 
                         <p class="cambio-acceso">
-                            ¿No tienes cuenta?
-                            <a href="registro.html">
-                                Regístrate
+                            ¿Ya tienes cuenta?
+                            <a href="login.html">
+                                Inicia sesión
                             </a>
                         </p>
 
