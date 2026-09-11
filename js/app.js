@@ -61,3 +61,22 @@ if (formularioLogin) {
     });
 
 }
+
+
+const botonCerrarSesion = document.getElementById("cerrar-sesion");
+
+if (botonCerrarSesion) {
+
+    botonCerrarSesion.addEventListener("click", function() {
+
+        const mensajeSesion = document.getElementById("mensaje-sesion");
+
+        mensajeSesion.classList.add("mostrar");
+
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 1200);
+
+    });
+
+}

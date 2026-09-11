@@ -74,7 +74,6 @@ textarea {
     color: #bdbdc2;
     font-size: 0.92rem;
     font-weight: 500;
-    transition: 0.25s ease;
 }
 
 .menu a:hover,
@@ -159,7 +158,6 @@ textarea {
     border-radius: 7px;
     font-size: 0.92rem;
     font-weight: 600;
-    transition: 0.25s ease;
     cursor: pointer;
 }
 
@@ -176,6 +174,7 @@ textarea {
 .boton-secundario {
     background-color: transparent;
     border: 1px solid #3b3b40;
+    color: #ffffff;
 }
 
 .boton-secundario:hover {
@@ -332,12 +331,10 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start;
 }
 
 .nosotros-historia h2 {
     font-size: 2.2rem;
-    letter-spacing: -1px;
     margin-bottom: 25px;
 }
 
@@ -348,8 +345,6 @@ textarea {
 }
 
 .nosotros-datos {
-    display: flex;
-    flex-direction: column;
     border-top: 1px solid #29292e;
 }
 
@@ -364,18 +359,15 @@ textarea {
 .dato-negocio > span {
     color: #a21d35;
     font-size: 0.75rem;
-    font-weight: 700;
 }
 
 .dato-negocio h3 {
-    font-size: 1.05rem;
     margin-bottom: 9px;
 }
 
 .dato-negocio p {
     color: #99999f;
     line-height: 1.7;
-    font-size: 0.92rem;
 }
 
 .mision {
@@ -387,14 +379,10 @@ textarea {
 }
 
 .mision h2 {
-    max-width: 650px;
-    font-size: 2.4rem;
-    letter-spacing: -1px;
     margin-bottom: 20px;
 }
 
 .mision > p:not(.subtitulo) {
-    max-width: 680px;
     color: #99999f;
     line-height: 1.8;
     margin-bottom: 30px;
@@ -406,12 +394,10 @@ textarea {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;
     gap: 90px;
-    align-items: start;
 }
 
 .contacto-info h2 {
     font-size: 2.2rem;
-    letter-spacing: -1px;
     margin-bottom: 20px;
 }
 
@@ -436,18 +422,14 @@ textarea {
 .info-item > span {
     color: #a21d35;
     font-size: 0.75rem;
-    font-weight: 700;
 }
 
 .info-item h3 {
-    font-size: 1rem;
     margin-bottom: 8px;
 }
 
 .info-item p {
     color: #99999f;
-    font-size: 0.9rem;
-    line-height: 1.6;
 }
 
 .redes {
@@ -457,7 +439,6 @@ textarea {
 .lista-redes {
     display: flex;
     gap: 12px;
-    flex-wrap: wrap;
 }
 
 .lista-redes a {
@@ -466,11 +447,6 @@ textarea {
     border-radius: 7px;
     color: #bdbdc2;
     font-size: 0.85rem;
-}
-
-.lista-redes a:hover {
-    color: #ffffff;
-    border-color: #a21d35;
 }
 
 /* formulario */
@@ -491,7 +467,6 @@ textarea {
     margin-bottom: 9px;
     color: #d5d5d8;
     font-size: 0.87rem;
-    font-weight: 600;
 }
 
 .campo input,
@@ -502,17 +477,11 @@ textarea {
     border: 1px solid #333338;
     border-radius: 8px;
     color: #ffffff;
-    font-size: 0.92rem;
     outline: none;
 }
 
 .campo textarea {
     resize: vertical;
-}
-
-.campo input::placeholder,
-.campo textarea::placeholder {
-    color: #66666c;
 }
 
 .campo input:focus,
@@ -561,7 +530,6 @@ textarea {
     align-items: center;
     background-color: #202024;
     color: #77777d;
-    font-size: 0.85rem;
 }
 
 .servicio-contenido {
@@ -576,14 +544,11 @@ textarea {
 .servicio-contenido p {
     min-height: 75px;
     color: #99999f;
-    font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .servicio-contenido h3 {
-    color: #ffffff;
-    font-size: 1.15rem;
     margin-bottom: 20px;
 }
 
@@ -592,13 +557,6 @@ textarea {
     padding: 10px 15px;
     border: 1px solid #44444a;
     border-radius: 6px;
-    color: #ffffff;
-    font-size: 0.82rem;
-}
-
-.boton-detalle:hover {
-    background-color: #a21d35;
-    border-color: #a21d35;
 }
 
 /* detalle */
@@ -619,34 +577,20 @@ textarea {
     border: 1px solid #303035;
     border-radius: 10px;
     color: #77777d;
-    font-size: 0.9rem;
 }
 
 .detalle-info h1 {
     font-size: 2.8rem;
-    line-height: 1.1;
     margin-bottom: 20px;
 }
 
 .detalle-info h2 {
-    font-size: 1.5rem;
     margin-bottom: 25px;
 }
 
 .detalle-info > p:not(.etiqueta) {
     color: #99999f;
     line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-.titulo-detalle {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.texto-detalle {
-    color: #99999f;
-    line-height: 1.7;
     margin-bottom: 30px;
 }
 
@@ -694,8 +638,105 @@ textarea {
     color: #c32947;
 }
 
-.cambio-acceso a:hover {
-    text-decoration: underline;
+/* perfil */
+
+.perfil-encabezado {
+    margin-bottom: 50px;
+}
+
+.perfil-encabezado h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.perfil-encabezado > p:last-child {
+    color: #99999f;
+}
+
+.perfil-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 35px;
+}
+
+.perfil-tarjeta {
+    padding: 30px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.perfil-avatar {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a21d35;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.perfil-tarjeta h2 {
+    margin-bottom: 8px;
+}
+
+.perfil-tarjeta > p {
+    color: #99999f;
+    margin-bottom: 25px;
+}
+
+.boton-sesion {
+    width: 100%;
+}
+
+.perfil-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.perfil-seccion {
+    padding: 30px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.perfil-seccion h2 {
+    margin-bottom: 25px;
+}
+
+.dato-perfil {
+    padding: 15px 0;
+    border-bottom: 1px solid #29292e;
+}
+
+.dato-perfil:last-child {
+    border-bottom: none;
+}
+
+.dato-perfil span {
+    color: #77777d;
+    font-size: 0.8rem;
+}
+
+.dato-perfil p {
+    margin-top: 5px;
+}
+
+.compras-proximamente {
+    padding: 25px;
+    background-color: #101012;
+    border: 1px solid #29292e;
+    border-radius: 8px;
+}
+
+.compras-proximamente p {
+    color: #99999f;
+    line-height: 1.6;
 }
 
 /* footer */
@@ -721,18 +762,8 @@ textarea {
         display: none;
     }
 
-    .hero {
-        min-height: auto;
-        padding: 90px 0;
-    }
-
     .contenido-hero {
         grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .texto-hero h1 {
-        letter-spacing: -2px;
     }
 
     .caracteristicas {
@@ -741,31 +772,27 @@ textarea {
 
     .nosotros-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
     }
 
     .contacto-grid {
         grid-template-columns: 1fr;
-        gap: 55px;
     }
 
     .detalle-servicio {
         grid-template-columns: 1fr;
-        gap: 40px;
     }
 
     .acceso {
         grid-template-columns: 1fr;
-        gap: 40px;
+    }
+
+    .perfil-grid {
+        grid-template-columns: 1fr;
     }
 
     .contenido-pie {
         flex-direction: column;
         gap: 10px;
-    }
-
-    .mision {
-        padding: 40px 30px;
     }
 }
 
@@ -786,39 +813,19 @@ textarea {
         width: 100%;
     }
 
-    .tarjeta-presentacion {
-        padding: 40px 28px;
-    }
-
     .pagina {
         padding: 80px 0;
     }
 
-    .encabezado-pagina h1 {
-        letter-spacing: -2px;
-    }
-
     .contenedor-formulario {
-        padding: 28px 20px;
-    }
-
-    .mision {
-        padding: 35px 25px;
-    }
-
-    .detalle-info h1 {
-        font-size: 2.2rem;
-    }
-
-    .detalle-imagen {
-        min-height: 280px;
-    }
-
-    .acceso-texto h1 {
-        font-size: 2.4rem;
+        padding: 25px 20px;
     }
 
     .acceso-formulario {
         padding: 25px 20px;
+    }
+
+    .perfil-encabezado h1 {
+        font-size: 2.4rem;
     }
 }
