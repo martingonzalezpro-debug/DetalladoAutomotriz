@@ -23,16 +23,32 @@
             <nav>
                 <ul class="menu">
 
-                    <li><a href="index.html">Inicio</a></li>
-
-                    <li><a href="catalogo.html">Catálogo</a></li>
-
-                    <li><a href="nosotros.html">Nosotros</a></li>
-
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
 
                     <li>
-                        <a href="login.html" class="boton-login activo">
+                        <a href="catalogo.html">
+                            Catálogo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="login.html" class="boton-login">
                             Iniciar sesión
                         </a>
                     </li>
@@ -73,7 +89,7 @@
 
                     <div class="acceso-formulario">
 
-                        <form id="formulario-registro">
+                        <form id="formulario-registro" novalidate>
 
                             <div class="campo">
 
@@ -85,7 +101,6 @@
                                     type="text"
                                     id="nombre-registro"
                                     placeholder="Escribe tu nombre"
-                                    required
                                 >
 
                             </div>
@@ -98,10 +113,9 @@
                                 </label>
 
                                 <input
-                                    type="email"
+                                    type="text"
                                     id="correo-registro"
                                     placeholder="correo@ejemplo.com"
-                                    required
                                 >
 
                             </div>
@@ -117,7 +131,6 @@
                                     type="password"
                                     id="contrasena-registro"
                                     placeholder="Escribe una contraseña"
-                                    required
                                 >
 
                             </div>
@@ -142,10 +155,13 @@
 
 
                         <p class="cambio-acceso">
+
                             ¿Ya tienes cuenta?
+
                             <a href="login.html">
                                 Inicia sesión
                             </a>
+
                         </p>
 
                     </div>

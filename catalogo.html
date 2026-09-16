@@ -70,24 +70,68 @@
                 <div class="encabezado-pagina">
 
                     <p class="etiqueta">
-                        CATÁLOGO
+                        SERVICIOS
                     </p>
 
                     <h1>
-                        Nuestros servicios
+                        Nuestro catálogo
                     </h1>
 
                     <p>
-                        Consulta algunos de los servicios disponibles
-                        para el cuidado y detallado de tu vehículo.
+                        Conoce los servicios disponibles para el cuidado,
+                        limpieza y protección de tu vehículo.
                     </p>
+
+                </div>
+
+
+                <div class="filtros-catalogo">
+
+                    <button
+                        class="filtro-boton activo"
+                        data-filtro="todos"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        class="filtro-boton"
+                        data-filtro="lavado"
+                    >
+                        Lavado
+                    </button>
+
+                    <button
+                        class="filtro-boton"
+                        data-filtro="interior"
+                    >
+                        Interior
+                    </button>
+
+                    <button
+                        class="filtro-boton"
+                        data-filtro="exterior"
+                    >
+                        Exterior
+                    </button>
+
+                    <button
+                        class="filtro-boton"
+                        data-filtro="restauracion"
+                    >
+                        Restauración
+                    </button>
 
                 </div>
 
 
                 <div class="catalogo-grid">
 
-                    <article class="servicio">
+
+                    <article
+                        class="servicio"
+                        data-categoria="lavado"
+                    >
 
                         <div class="servicio-imagen">
                             Imagen del servicio
@@ -95,21 +139,27 @@
 
                         <div class="servicio-contenido">
 
+                            <span class="etiqueta-servicio">
+                                Popular
+                            </span>
+
                             <h2>
                                 Paquete Clásico
                             </h2>
 
                             <p>
-                                Lavado de carrocería, baño de espuma,
-                                aspirado, limpieza interior básica,
-                                vidrios y acabado exterior.
+                                Lavado exterior, aspirado interior,
+                                limpieza básica y protección rápida.
                             </p>
 
                             <h3>
                                 Desde $250
                             </h3>
 
-                            <a href="detalle-clasico.html" class="boton-detalle">
+                            <a
+                                href="detalle-clasico.html"
+                                class="boton-detalle"
+                            >
                                 Ver detalle
                             </a>
 
@@ -118,7 +168,10 @@
                     </article>
 
 
-                    <article class="servicio">
+                    <article
+                        class="servicio"
+                        data-categoria="interior"
+                    >
 
                         <div class="servicio-imagen">
                             Imagen del servicio
@@ -131,15 +184,18 @@
                             </h2>
 
                             <p>
-                                Limpieza profunda de asientos, techo,
-                                alfombra, tapetes y plásticos interiores.
+                                Limpieza profunda de asientos,
+                                alfombras, plásticos y cielo interior.
                             </p>
 
                             <h3>
                                 Desde $1,200
                             </h3>
 
-                            <a href="detalle-interior.html" class="boton-detalle">
+                            <a
+                                href="detalle-interior.html"
+                                class="boton-detalle"
+                            >
                                 Ver detalle
                             </a>
 
@@ -148,7 +204,10 @@
                     </article>
 
 
-                    <article class="servicio">
+                    <article
+                        class="servicio"
+                        data-categoria="exterior"
+                    >
 
                         <div class="servicio-imagen">
                             Imagen del servicio
@@ -162,14 +221,17 @@
 
                             <p>
                                 Descontaminación, pulido y protección
-                                exterior con aplicación de Cera Soft99.
+                                con cera Soft99 de larga duración.
                             </p>
 
                             <h3>
                                 Desde $1,600
                             </h3>
 
-                            <a href="detalle-soft99.html" class="boton-detalle">
+                            <a
+                                href="detalle-soft99.html"
+                                class="boton-detalle"
+                            >
                                 Ver detalle
                             </a>
 
@@ -178,7 +240,10 @@
                     </article>
 
 
-                    <article class="servicio">
+                    <article
+                        class="servicio"
+                        data-categoria="exterior"
+                    >
 
                         <div class="servicio-imagen">
                             Imagen del servicio
@@ -186,20 +251,27 @@
 
                         <div class="servicio-contenido">
 
+                            <span class="etiqueta-servicio">
+                                Nuevo
+                            </span>
+
                             <h2>
-                                Restauración de faros
+                                Nano Ceramic
                             </h2>
 
                             <p>
-                                Restauración para mejorar faros opacos,
-                                amarillentos o dañados por el paso del tiempo.
+                                Tratamiento exterior con protección
+                                cerámica y duración aproximada de dos años.
                             </p>
 
                             <h3>
-                                $450
+                                Desde $3,300
                             </h3>
 
-                            <a href="detalle-faros.html" class="boton-detalle">
+                            <a
+                                href="detalle-nano.html"
+                                class="boton-detalle"
+                            >
                                 Ver detalle
                             </a>
 
@@ -208,7 +280,90 @@
                     </article>
 
 
-                    <article class="servicio">
+                    <article
+                        class="servicio"
+                        data-categoria="exterior"
+                    >
+
+                        <div class="servicio-imagen">
+                            Imagen del servicio
+                        </div>
+
+                        <div class="servicio-contenido">
+
+                            <span class="etiqueta-servicio">
+                                Premium
+                            </span>
+
+                            <h2>
+                                Graphene Ceramic
+                            </h2>
+
+                            <p>
+                                Protección exterior con recubrimiento
+                                de grafeno de alta duración.
+                            </p>
+
+                            <h3>
+                                Desde $5,200
+                            </h3>
+
+                            <a
+                                href="detalle-graphene.html"
+                                class="boton-detalle"
+                            >
+                                Ver detalle
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="servicio"
+                        data-categoria="restauracion"
+                    >
+
+                        <div class="servicio-imagen">
+                            Imagen del servicio
+                        </div>
+
+                        <div class="servicio-contenido">
+
+                            <span class="etiqueta-servicio">
+                                Oferta
+                            </span>
+
+                            <h2>
+                                Restauración de faros
+                            </h2>
+
+                            <p>
+                                Recuperación de transparencia y brillo
+                                para faros dañados u opacos.
+                            </p>
+
+                            <h3>
+                                $450
+                            </h3>
+
+                            <a
+                                href="detalle-faros.html"
+                                class="boton-detalle"
+                            >
+                                Ver detalle
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="servicio"
+                        data-categoria="restauracion"
+                    >
 
                         <div class="servicio-imagen">
                             Imagen del servicio
@@ -221,15 +376,18 @@
                             </h2>
 
                             <p>
-                                Eliminación de manchas minerales y marcas
-                                de agua mediante tratamiento químico.
+                                Eliminación de minerales y suciedad
+                                adherida con protección final.
                             </p>
 
                             <h3>
                                 $350
                             </h3>
 
-                            <a href="detalle-vidrios.html" class="boton-detalle">
+                            <a
+                                href="detalle-vidrios.html"
+                                class="boton-detalle"
+                            >
                                 Ver detalle
                             </a>
 
@@ -238,7 +396,10 @@
                     </article>
 
 
-                    <article class="servicio">
+                    <article
+                        class="servicio"
+                        data-categoria="restauracion"
+                    >
 
                         <div class="servicio-imagen">
                             Imagen del servicio
@@ -251,21 +412,25 @@
                             </h2>
 
                             <p>
-                                Pulido del lente del tablero para reducir
-                                opacidad y rayones superficiales.
+                                Pulido para reducir marcas y recuperar
+                                claridad en el plástico del tablero.
                             </p>
 
                             <h3>
                                 $300
                             </h3>
 
-                            <a href="detalle-cluster.html" class="boton-detalle">
+                            <a
+                                href="detalle-cluster.html"
+                                class="boton-detalle"
+                            >
                                 Ver detalle
                             </a>
 
                         </div>
 
                     </article>
+
 
                 </div>
 
@@ -291,6 +456,9 @@
         </div>
 
     </footer>
+
+
+    <script src="js/app.js"></script>
 
 </body>
 
