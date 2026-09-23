@@ -2,12 +2,21 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Descontaminación de vidrios | Dr. Chulo</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
 </head>
 
 <body>
@@ -21,6 +30,7 @@
             </a>
 
             <nav>
+
                 <ul class="menu">
 
                     <li><a href="index.html">Inicio</a></li>
@@ -42,6 +52,7 @@
                     </li>
 
                 </ul>
+
             </nav>
 
         </div>
@@ -53,37 +64,153 @@
 
         <section class="pagina">
 
-            <div class="contenedor detalle-servicio">
+            <div class="contenedor">
 
-                <div class="detalle-imagen">
-                    Imagen del servicio
+                <div class="detalle-servicio">
+
+                    <div class="detalle-imagen">
+                        Imagen del servicio
+                    </div>
+
+
+                    <div class="detalle-info">
+
+                        <p class="etiqueta">
+                            RESTAURACIÓN
+                        </p>
+
+                        <h1>
+                            Descontaminación de vidrios
+                        </h1>
+
+                        <h2>
+                            $350
+                        </h2>
+
+                        <p>
+                            Limpieza química para eliminar minerales,
+                            sarro y contaminación adherida a los vidrios,
+                            finalizando con protección.
+                        </p>
+
+
+                        <div class="selector-cantidad">
+
+                            <p>
+                                Cantidad
+                            </p>
+
+                            <div class="cantidad-controles">
+
+                                <button
+                                    type="button"
+                                    class="cantidad-boton"
+                                    data-accion="restar"
+                                >
+                                    -
+                                </button>
+
+                                <span class="cantidad-numero">
+                                    1
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="cantidad-boton"
+                                    data-accion="sumar"
+                                >
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="acciones-detalle">
+
+                            <button
+                                type="button"
+                                class="boton boton-principal agregar-carrito"
+                                data-nombre="Descontaminación de vidrios"
+                                data-precio="350"
+                            >
+                                Agregar al carrito
+                            </button>
+
+                            <a
+                                href="catalogo.html"
+                                class="boton boton-secundario"
+                            >
+                                Regresar al catálogo
+                            </a>
+
+                        </div>
+
+
+                        <div class="mensaje-carrito">
+                            Servicio agregado al carrito.
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="detalle-info">
 
-                    <p class="etiqueta">
-                        VIDRIOS
+                <section class="relacionados">
+
+                    <p class="subtitulo">
+                        TAMBIÉN TE PUEDE INTERESAR
                     </p>
-
-                    <h1>
-                        Descontaminación de vidrios
-                    </h1>
 
                     <h2>
-                        $350
+                        Servicios relacionados
                     </h2>
 
-                    <p>
-                        Tratamiento químico para eliminar manchas
-                        minerales y marcas de agua acumuladas en
-                        los vidrios. Incluye sellado final.
-                    </p>
 
-                    <a href="catalogo.html" class="boton boton-secundario">
-                        Regresar al catálogo
-                    </a>
+                    <div class="relacionados-grid">
 
-                </div>
+                        <a href="detalle-faros.html" class="relacionado">
+
+                            <h3>
+                                Restauración de faros
+                            </h3>
+
+                            <p>
+                                $450
+                            </p>
+
+                        </a>
+
+
+                        <a href="detalle-cluster.html" class="relacionado">
+
+                            <h3>
+                                Pulido de clúster
+                            </h3>
+
+                            <p>
+                                $300
+                            </p>
+
+                        </a>
+
+
+                        <a href="detalle-soft99.html" class="relacionado">
+
+                            <h3>
+                                Cera Soft99
+                            </h3>
+
+                            <p>
+                                Desde $1,600
+                            </p>
+
+                        </a>
+
+                    </div>
+
+                </section>
 
             </div>
 
@@ -107,6 +234,9 @@
         </div>
 
     </footer>
+
+
+    <script src="js/app.js"></script>
 
 </body>
 

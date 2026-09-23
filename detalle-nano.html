@@ -2,12 +2,21 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Nano Ceramic | Dr. Chulo</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
 </head>
 
 <body>
@@ -21,13 +30,10 @@
             </a>
 
             <nav>
+
                 <ul class="menu">
 
-                    <li>
-                        <a href="index.html">
-                            Inicio
-                        </a>
-                    </li>
+                    <li><a href="index.html">Inicio</a></li>
 
                     <li>
                         <a href="catalogo.html" class="activo">
@@ -35,17 +41,9 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="nosotros.html">
-                            Nosotros
-                        </a>
-                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
 
-                    <li>
-                        <a href="contacto.html">
-                            Contacto
-                        </a>
-                    </li>
+                    <li><a href="contacto.html">Contacto</a></li>
 
                     <li>
                         <a href="login.html" class="boton-login">
@@ -54,6 +52,7 @@
                     </li>
 
                 </ul>
+
             </nav>
 
         </div>
@@ -89,21 +88,129 @@
                         </h2>
 
                         <p>
-                            Servicio de detallado exterior con preparación
-                            de pintura y aplicación de recubrimiento Nano
-                            Ceramic con duración aproximada de dos años.
+                            Detallado exterior con preparación de pintura
+                            y aplicación de recubrimiento Nano Ceramic
+                            con duración aproximada de dos años.
                         </p>
 
-                        <a
-                            href="catalogo.html"
-                            class="boton boton-secundario"
-                        >
-                            Regresar al catálogo
-                        </a>
+
+                        <div class="selector-cantidad">
+
+                            <p>
+                                Cantidad
+                            </p>
+
+                            <div class="cantidad-controles">
+
+                                <button
+                                    type="button"
+                                    class="cantidad-boton"
+                                    data-accion="restar"
+                                >
+                                    -
+                                </button>
+
+                                <span class="cantidad-numero">
+                                    1
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="cantidad-boton"
+                                    data-accion="sumar"
+                                >
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="acciones-detalle">
+
+                            <button
+                                type="button"
+                                class="boton boton-principal agregar-carrito"
+                                data-nombre="Nano Ceramic"
+                                data-precio="3300"
+                            >
+                                Agregar al carrito
+                            </button>
+
+                            <a
+                                href="catalogo.html"
+                                class="boton boton-secundario"
+                            >
+                                Regresar al catálogo
+                            </a>
+
+                        </div>
+
+
+                        <div class="mensaje-carrito">
+                            Servicio agregado al carrito.
+                        </div>
 
                     </div>
 
                 </div>
+
+
+                <section class="relacionados">
+
+                    <p class="subtitulo">
+                        TAMBIÉN TE PUEDE INTERESAR
+                    </p>
+
+                    <h2>
+                        Servicios relacionados
+                    </h2>
+
+
+                    <div class="relacionados-grid">
+
+                        <a href="detalle-soft99.html" class="relacionado">
+
+                            <h3>
+                                Cera Soft99
+                            </h3>
+
+                            <p>
+                                Desde $1,600
+                            </p>
+
+                        </a>
+
+
+                        <a href="detalle-graphene.html" class="relacionado">
+
+                            <h3>
+                                Graphene Ceramic
+                            </h3>
+
+                            <p>
+                                Desde $5,200
+                            </p>
+
+                        </a>
+
+
+                        <a href="detalle-faros.html" class="relacionado">
+
+                            <h3>
+                                Restauración de faros
+                            </h3>
+
+                            <p>
+                                $450
+                            </p>
+
+                        </a>
+
+                    </div>
+
+                </section>
 
             </div>
 
@@ -127,6 +234,9 @@
         </div>
 
     </footer>
+
+
+    <script src="js/app.js"></script>
 
 </body>
 

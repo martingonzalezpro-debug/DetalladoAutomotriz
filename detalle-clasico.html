@@ -53,38 +53,157 @@
 
         <section class="pagina">
 
-            <div class="contenedor detalle-servicio">
+            <div class="contenedor">
 
-                <div class="detalle-imagen">
-                    Imagen del servicio
+                <div class="detalle-servicio">
+
+                    <div class="detalle-imagen">
+                        Imagen del servicio
+                    </div>
+
+
+                    <div class="detalle-info">
+
+                        <p class="etiqueta">
+                            LAVADO
+                        </p>
+
+                        <h1>
+                            Paquete Clásico
+                        </h1>
+
+                        <h2>
+                            Desde $250
+                        </h2>
+
+                        <p>
+                            Lavado de carrocería a tres pasos con baño
+                            de espuma, Spray Wax, limpieza de rines y
+                            neumáticos, aspirado interior, limpieza de
+                            plásticos, vidrios y aroma.
+                        </p>
+
+
+                        <div class="selector-cantidad">
+
+                            <p>
+                                Cantidad
+                            </p>
+
+                            <div class="cantidad-controles">
+
+                                <button
+                                    type="button"
+                                    class="cantidad-boton"
+                                    data-accion="restar"
+                                >
+                                    -
+                                </button>
+
+                                <span class="cantidad-numero">
+                                    1
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="cantidad-boton"
+                                    data-accion="sumar"
+                                >
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="acciones-detalle">
+
+                            <button
+                                type="button"
+                                class="boton boton-principal agregar-carrito"
+                                data-nombre="Paquete Clásico"
+                                data-precio="250"
+                            >
+                                Agregar al carrito
+                            </button>
+
+                            <a
+                                href="catalogo.html"
+                                class="boton boton-secundario"
+                            >
+                                Regresar al catálogo
+                            </a>
+
+                        </div>
+
+
+                        <div class="mensaje-carrito">
+                            Servicio agregado al carrito.
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="detalle-info">
 
-                    <p class="etiqueta">
-                        PAQUETE
+                <section class="relacionados">
+
+                    <p class="subtitulo">
+                        TAMBIÉN TE PUEDE INTERESAR
                     </p>
-
-                    <h1>
-                        Paquete Clásico
-                    </h1>
 
                     <h2>
-                        Desde $250
+                        Servicios relacionados
                     </h2>
 
-                    <p>
-                        Incluye lavado de carrocería con baño de espuma,
-                        Spray Wax, limpieza básica de rines y neumáticos,
-                        aspirado interior, limpieza de plásticos, vidrios
-                        y aroma fresco.
-                    </p>
 
-                    <a href="catalogo.html" class="boton boton-secundario">
-                        Regresar al catálogo
-                    </a>
+                    <div class="relacionados-grid">
 
-                </div>
+                        <a
+                            href="detalle-interior.html"
+                            class="relacionado"
+                        >
+                            <h3>
+                                Interior Completo
+                            </h3>
+
+                            <p>
+                                Desde $1,200
+                            </p>
+                        </a>
+
+
+                        <a
+                            href="detalle-vidrios.html"
+                            class="relacionado"
+                        >
+                            <h3>
+                                Descontaminación de vidrios
+                            </h3>
+
+                            <p>
+                                $350
+                            </p>
+                        </a>
+
+
+                        <a
+                            href="detalle-faros.html"
+                            class="relacionado"
+                        >
+                            <h3>
+                                Restauración de faros
+                            </h3>
+
+                            <p>
+                                $450
+                            </p>
+                        </a>
+
+                    </div>
+
+                </section>
 
             </div>
 
@@ -108,6 +227,9 @@
         </div>
 
     </footer>
+
+
+    <script src="js/app.js"></script>
 
 </body>
 

@@ -621,7 +621,7 @@ textarea {
 }
 
 .detalle-imagen {
-    min-height: 380px;
+    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -644,6 +644,112 @@ textarea {
     color: #99999f;
     line-height: 1.8;
     margin-bottom: 30px;
+}
+
+.selector-cantidad {
+    margin-bottom: 30px;
+}
+
+.selector-cantidad > p {
+    color: #d5d5d8;
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+}
+
+.cantidad-controles {
+    width: 145px;
+    display: grid;
+    grid-template-columns: 45px 55px 45px;
+    border: 1px solid #343439;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.cantidad-boton {
+    height: 44px;
+    background-color: #18181c;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cantidad-boton:hover {
+    background-color: #252529;
+}
+
+.cantidad-numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #101012;
+    border-left: 1px solid #343439;
+    border-right: 1px solid #343439;
+}
+
+.acciones-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.agregar-carrito {
+    border: none;
+}
+
+.mensaje-carrito {
+    display: none;
+    margin-top: 20px;
+    padding: 13px 15px;
+    background-color: #17271c;
+    border: 1px solid #31563c;
+    border-radius: 7px;
+    color: #a9d8b7;
+    font-size: 0.85rem;
+}
+
+.mensaje-carrito.mostrar {
+    display: block;
+}
+
+/* relacionados */
+
+.relacionados {
+    margin-top: 110px;
+    padding-top: 50px;
+    border-top: 1px solid #29292e;
+}
+
+.relacionados h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.relacionados-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.relacionado {
+    padding: 25px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 9px;
+}
+
+.relacionado:hover {
+    border-color: #a21d35;
+}
+
+.relacionado h3 {
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.relacionado p {
+    color: #99999f;
+    font-size: 0.9rem;
 }
 
 /* acceso */
@@ -839,6 +945,10 @@ textarea {
         grid-template-columns: 1fr;
     }
 
+    .relacionados-grid {
+        grid-template-columns: 1fr;
+    }
+
     .acceso {
         grid-template-columns: 1fr;
     }
@@ -858,6 +968,7 @@ textarea {
     .catalogo-grid {
         grid-template-columns: 1fr;
     }
+
 }
 
 @media (max-width: 500px) {
@@ -868,6 +979,10 @@ textarea {
 
     .boton {
         width: 100%;
+    }
+
+    .acciones-detalle {
+        flex-direction: column;
     }
 
     .pagina {
