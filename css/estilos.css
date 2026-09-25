@@ -67,7 +67,7 @@ textarea {
 .menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 27px;
 }
 
 .menu a {
@@ -91,6 +91,16 @@ textarea {
 .menu .boton-login:hover {
     border-color: #a21d35;
     background-color: #a21d35;
+}
+
+.enlace-carrito {
+    white-space: nowrap;
+    color: #ffffff !important;
+}
+
+.enlace-carrito span {
+    color: #c32947;
+    font-weight: 700;
 }
 
 /* hero */
@@ -256,7 +266,6 @@ textarea {
 .encabezado-seccion h2 {
     max-width: 650px;
     font-size: 2.4rem;
-    letter-spacing: -1px;
 }
 
 .caracteristicas {
@@ -281,13 +290,11 @@ textarea {
 }
 
 .caracteristica h3 {
-    font-size: 1.15rem;
     margin-bottom: 13px;
 }
 
 .caracteristica p {
     color: #99999f;
-    font-size: 0.92rem;
     line-height: 1.7;
 }
 
@@ -305,16 +312,12 @@ textarea {
 
 .encabezado-pagina h1 {
     font-size: clamp(2.8rem, 5vw, 4.6rem);
-    line-height: 1.05;
-    letter-spacing: -3px;
     margin-bottom: 25px;
 }
 
 .encabezado-pagina > p:last-child {
     color: #99999f;
-    max-width: 650px;
     line-height: 1.8;
-    font-size: 1.02rem;
 }
 
 .subtitulo {
@@ -358,7 +361,6 @@ textarea {
 
 .dato-negocio > span {
     color: #a21d35;
-    font-size: 0.75rem;
 }
 
 .dato-negocio h3 {
@@ -385,7 +387,6 @@ textarea {
 .mision > p:not(.subtitulo) {
     color: #99999f;
     line-height: 1.8;
-    margin-bottom: 30px;
 }
 
 /* contacto */
@@ -421,7 +422,6 @@ textarea {
 
 .info-item > span {
     color: #a21d35;
-    font-size: 0.75rem;
 }
 
 .info-item h3 {
@@ -446,12 +446,6 @@ textarea {
     border: 1px solid #343439;
     border-radius: 7px;
     color: #bdbdc2;
-    font-size: 0.85rem;
-}
-
-.lista-redes a:hover {
-    border-color: #a21d35;
-    color: #ffffff;
 }
 
 /* formulario */
@@ -471,7 +465,6 @@ textarea {
     display: block;
     margin-bottom: 9px;
     color: #d5d5d8;
-    font-size: 0.87rem;
 }
 
 .campo input,
@@ -506,7 +499,6 @@ textarea {
     background-color: #17271c;
     border-radius: 8px;
     color: #a9d8b7;
-    font-size: 0.88rem;
 }
 
 .mensaje-exito.mostrar {
@@ -529,11 +521,6 @@ textarea {
     border-radius: 7px;
     color: #bdbdc2;
     cursor: pointer;
-}
-
-.filtro-boton:hover {
-    border-color: #a21d35;
-    color: #ffffff;
 }
 
 .filtro-boton.activo {
@@ -580,12 +567,9 @@ textarea {
     border: 1px solid #6e1b2c;
     border-radius: 5px;
     color: #d45a70;
-    font-size: 0.72rem;
-    font-weight: 600;
 }
 
 .servicio-contenido h2 {
-    font-size: 1.3rem;
     margin-bottom: 14px;
 }
 
@@ -605,10 +589,6 @@ textarea {
     padding: 10px 15px;
     border: 1px solid #44444a;
     border-radius: 6px;
-}
-
-.boton-detalle:hover {
-    border-color: #a21d35;
 }
 
 /* detalle */
@@ -646,45 +626,10 @@ textarea {
     margin-bottom: 30px;
 }
 
+/* la cantidad no se usa porque cada carrito representa un vehiculo */
+
 .selector-cantidad {
-    margin-bottom: 30px;
-}
-
-.selector-cantidad > p {
-    color: #d5d5d8;
-    font-size: 0.88rem;
-    margin-bottom: 10px;
-}
-
-.cantidad-controles {
-    width: 145px;
-    display: grid;
-    grid-template-columns: 45px 55px 45px;
-    border: 1px solid #343439;
-    border-radius: 7px;
-    overflow: hidden;
-}
-
-.cantidad-boton {
-    height: 44px;
-    background-color: #18181c;
-    border: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.cantidad-boton:hover {
-    background-color: #252529;
-}
-
-.cantidad-numero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #101012;
-    border-left: 1px solid #343439;
-    border-right: 1px solid #343439;
+    display: none;
 }
 
 .acciones-detalle {
@@ -705,11 +650,16 @@ textarea {
     border: 1px solid #31563c;
     border-radius: 7px;
     color: #a9d8b7;
-    font-size: 0.85rem;
 }
 
 .mensaje-carrito.mostrar {
     display: block;
+}
+
+.mensaje-carrito.mensaje-aviso {
+    background-color: #2b2515;
+    border-color: #5c5029;
+    color: #e1cd83;
 }
 
 /* relacionados */
@@ -721,7 +671,6 @@ textarea {
 }
 
 .relacionados h2 {
-    font-size: 2rem;
     margin-bottom: 30px;
 }
 
@@ -744,12 +693,10 @@ textarea {
 
 .relacionado h3 {
     margin-bottom: 12px;
-    font-size: 1rem;
 }
 
 .relacionado p {
     color: #99999f;
-    font-size: 0.9rem;
 }
 
 /* acceso */
@@ -789,15 +736,10 @@ textarea {
     margin-top: 25px;
     text-align: center;
     color: #88888e;
-    font-size: 0.85rem;
 }
 
 .cambio-acceso a {
     color: #c32947;
-}
-
-.cambio-acceso a:hover {
-    text-decoration: underline;
 }
 
 /* perfil */
@@ -821,7 +763,8 @@ textarea {
     gap: 35px;
 }
 
-.perfil-tarjeta {
+.perfil-tarjeta,
+.perfil-seccion {
     padding: 30px;
     background-color: #151518;
     border: 1px solid #29292e;
@@ -860,13 +803,6 @@ textarea {
     gap: 25px;
 }
 
-.perfil-seccion {
-    padding: 30px;
-    background-color: #151518;
-    border: 1px solid #29292e;
-    border-radius: 10px;
-}
-
 .perfil-seccion h2 {
     margin-bottom: 25px;
 }
@@ -882,7 +818,6 @@ textarea {
 
 .dato-perfil span {
     color: #77777d;
-    font-size: 0.8rem;
 }
 
 .dato-perfil p {
@@ -900,6 +835,170 @@ textarea {
     color: #99999f;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+/* carrito */
+
+.carrito-contenido {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.lista-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.producto-carrito {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.producto-carrito-info h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.producto-carrito-info p {
+    color: #88888e;
+    font-size: 0.85rem;
+}
+
+.producto-carrito-precio {
+    min-width: 120px;
+    text-align: right;
+}
+
+.producto-carrito-precio strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.eliminar-producto {
+    border: none;
+    background: none;
+    color: #c85c6f;
+    cursor: pointer;
+}
+
+.eliminar-producto:hover {
+    text-decoration: underline;
+}
+
+.resumen-carrito {
+    position: sticky;
+    top: 105px;
+    padding: 30px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.resumen-carrito h2 {
+    margin-bottom: 25px;
+}
+
+.resumen-linea {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    color: #99999f;
+    border-bottom: 1px solid #29292e;
+}
+
+.resumen-total {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.boton-pagar {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.seguir-comprando {
+    display: block;
+    margin-top: 18px;
+    text-align: center;
+    color: #99999f;
+    font-size: 0.85rem;
+}
+
+.seguir-comprando:hover {
+    color: #ffffff;
+}
+
+.carrito-vacio {
+    padding: 50px;
+    text-align: center;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.carrito-vacio h2 {
+    margin-bottom: 12px;
+}
+
+.carrito-vacio p {
+    color: #99999f;
+    margin-bottom: 25px;
+}
+
+.boton-deshabilitado {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* checkout */
+
+.checkout-contenido {
+    max-width: 760px;
+}
+
+.checkout-tarjeta {
+    padding: 35px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.checkout-tarjeta > h2 {
+    margin-bottom: 25px;
+}
+
+.checkout-producto {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 18px 0;
+    border-bottom: 1px solid #29292e;
+}
+
+.checkout-producto strong {
+    display: block;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    font-size: 1.2rem;
+}
+
+.checkout-vacio {
+    padding: 20px 0;
+    color: #99999f;
 }
 
 /* footer */
@@ -925,36 +1024,23 @@ textarea {
         display: none;
     }
 
-    .contenido-hero {
+    .contenido-hero,
+    .nosotros-grid,
+    .contacto-grid,
+    .detalle-servicio,
+    .acceso,
+    .perfil-grid,
+    .carrito-contenido {
         grid-template-columns: 1fr;
     }
 
-    .caracteristicas {
-        grid-template-columns: 1fr;
-    }
-
-    .nosotros-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contacto-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .detalle-servicio {
-        grid-template-columns: 1fr;
-    }
-
+    .caracteristicas,
     .relacionados-grid {
         grid-template-columns: 1fr;
     }
 
-    .acceso {
-        grid-template-columns: 1fr;
-    }
-
-    .perfil-grid {
-        grid-template-columns: 1fr;
+    .resumen-carrito {
+        position: static;
     }
 
     .contenido-pie {
@@ -969,11 +1055,19 @@ textarea {
         grid-template-columns: 1fr;
     }
 
+    .producto-carrito {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-carrito-precio {
+        text-align: left;
+    }
 }
 
 @media (max-width: 500px) {
 
-    .botones-hero {
+    .botones-hero,
+    .acciones-detalle {
         flex-direction: column;
     }
 
@@ -981,24 +1075,13 @@ textarea {
         width: 100%;
     }
 
-    .acciones-detalle {
-        flex-direction: column;
-    }
-
     .pagina {
         padding: 80px 0;
     }
 
-    .contenedor-formulario {
-        padding: 25px 20px;
-    }
-
+    .contenedor-formulario,
     .acceso-formulario {
         padding: 25px 20px;
-    }
-
-    .perfil-encabezado h1 {
-        font-size: 2.4rem;
     }
 
     .filtros-catalogo {
