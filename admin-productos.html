@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Productos | Dr. Chulo</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body class="admin-body">
+
+    <div class="admin-layout">
+
+        <aside class="admin-sidebar">
+
+            <a href="index.html" class="admin-logo">
+                <span>DR.</span> CHULO
+            </a>
+
+            <p class="admin-titulo-menu">
+                ADMINISTRACIÓN
+            </p>
+
+
+            <nav class="admin-menu">
+
+                <a
+                    href="admin.html"
+                    class="admin-enlace"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="admin-productos.html"
+                    class="admin-enlace activo"
+                >
+                    Productos
+                </a>
+
+                <a
+                    href="admin.html#pedidos"
+                    class="admin-enlace"
+                >
+                    Pedidos
+                </a>
+
+                <a
+                    href="admin.html#promociones"
+                    class="admin-enlace"
+                >
+                    Promociones
+                </a>
+
+            </nav>
+
+
+            <div class="admin-sidebar-abajo">
+
+                <a
+                    href="perfil.html"
+                    class="admin-volver"
+                >
+                    Volver al perfil
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <main class="admin-principal">
+
+            <header class="admin-encabezado">
+
+                <div>
+
+                    <p class="admin-subtitulo">
+                        CATÁLOGO
+                    </p>
+
+                    <h1>
+                        Gestión de productos
+                    </h1>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="abrir-formulario-producto"
+                    class="admin-boton"
+                >
+                    Agregar producto
+                </button>
+
+            </header>
+
+
+            <section
+                id="formulario-producto-contenedor"
+                class="admin-formulario-contenedor"
+            >
+
+                <div class="admin-formulario-encabezado">
+
+                    <h2 id="titulo-formulario-producto">
+                        Agregar producto
+                    </h2>
+
+                    <button
+                        type="button"
+                        id="cerrar-formulario-producto"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form
+                    id="formulario-producto"
+                    novalidate
+                >
+
+                    <input
+                        type="hidden"
+                        id="producto-id"
+                    >
+
+
+                    <div class="admin-formulario-grid">
+
+                        <div class="campo">
+
+                            <label for="producto-nombre">
+                                Nombre
+                            </label>
+
+                            <input
+                                type="text"
+                                id="producto-nombre"
+                                placeholder="Nombre del servicio"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="producto-categoria">
+                                Categoría
+                            </label>
+
+                            <select id="producto-categoria">
+
+                                <option value="Lavado">
+                                    Lavado
+                                </option>
+
+                                <option value="Interior">
+                                    Interior
+                                </option>
+
+                                <option value="Exterior">
+                                    Exterior
+                                </option>
+
+                                <option value="Restauración">
+                                    Restauración
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="producto-precio">
+                                Precio
+                            </label>
+
+                            <input
+                                type="text"
+                                id="producto-precio"
+                                placeholder="250"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="producto-etiqueta">
+                                Etiqueta
+                            </label>
+
+                            <input
+                                type="text"
+                                id="producto-etiqueta"
+                                placeholder="Nuevo, Oferta, Premium..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="producto-descripcion">
+                            Descripción
+                        </label>
+
+                        <textarea
+                            id="producto-descripcion"
+                            rows="4"
+                            placeholder="Descripción del servicio"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="admin-formulario-botones">
+
+                        <button
+                            type="submit"
+                            class="admin-boton"
+                        >
+                            Guardar producto
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancelar-producto"
+                            class="admin-boton-secundario"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <section class="admin-seccion">
+
+                <div class="admin-seccion-encabezado">
+
+                    <div>
+
+                        <p class="admin-subtitulo">
+                            PRODUCTOS
+                        </p>
+
+                        <h2>
+                            Servicios registrados
+                        </h2>
+
+                    </div>
+
+
+                    <p class="admin-contador-productos">
+
+                        Total:
+
+                        <strong id="cantidad-productos">
+                            0
+                        </strong>
+
+                    </p>
+
+                </div>
+
+
+                <div class="admin-tabla-contenedor">
+
+                    <table class="admin-tabla">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Nombre
+                                </th>
+
+                                <th>
+                                    Categoría
+                                </th>
+
+                                <th>
+                                    Precio
+                                </th>
+
+                                <th>
+                                    Etiqueta
+                                </th>
+
+                                <th>
+                                    Acciones
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="tabla-productos">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

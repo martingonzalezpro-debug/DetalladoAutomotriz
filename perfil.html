@@ -2,12 +2,21 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Mi perfil | Dr. Chulo</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
 </head>
 
 <body>
@@ -16,11 +25,16 @@
 
         <div class="contenedor navegacion">
 
-            <a href="index.html" class="logo">
+            <a
+                href="index.html"
+                class="logo"
+            >
                 <span>DR.</span> CHULO
             </a>
 
+
             <nav>
+
                 <ul class="menu">
 
                     <li>
@@ -48,12 +62,16 @@
                     </li>
 
                     <li>
-                        <a href="perfil.html" class="boton-login activo">
+                        <a
+                            href="perfil.html"
+                            class="boton-login activo"
+                        >
                             Mi perfil
                         </a>
                     </li>
 
                 </ul>
+
             </nav>
 
         </div>
@@ -78,7 +96,8 @@
                     </h1>
 
                     <p>
-                        Consulta la información de tu cuenta.
+                        Consulta la información de tu cuenta
+                        y tus servicios.
                     </p>
 
                 </div>
@@ -86,7 +105,7 @@
 
                 <div class="perfil-grid">
 
-                    <div class="perfil-tarjeta">
+                    <aside class="perfil-tarjeta">
 
                         <div class="perfil-avatar">
                             U
@@ -100,12 +119,24 @@
                             usuario@correo.com
                         </p>
 
-                        <button
-                            id="cerrar-sesion"
+
+                        <a
+                            href="admin.html"
                             class="boton boton-secundario boton-sesion"
+                        >
+                            Panel administrativo
+                        </a>
+
+
+                        <button
+                            type="button"
+                            id="cerrar-sesion"
+                            class="boton boton-principal boton-sesion"
+                            style="margin-top: 12px;"
                         >
                             Cerrar sesión
                         </button>
+
 
                         <div
                             id="mensaje-sesion"
@@ -114,16 +145,17 @@
                             Sesión cerrada correctamente.
                         </div>
 
-                    </div>
+                    </aside>
 
 
                     <div class="perfil-contenido">
 
-                        <div class="perfil-seccion">
+                        <section class="perfil-seccion">
 
                             <h2>
                                 Mis datos
                             </h2>
+
 
                             <div class="dato-perfil">
 
@@ -163,14 +195,15 @@
 
                             </div>
 
-                        </div>
+                        </section>
 
 
-                        <div class="perfil-seccion">
+                        <section class="perfil-seccion">
 
                             <h2>
                                 Mis compras
                             </h2>
+
 
                             <div class="compras-proximamente">
 
@@ -187,7 +220,7 @@
 
                             </div>
 
-                        </div>
+                        </section>
 
                     </div>
 
