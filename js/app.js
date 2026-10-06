@@ -2,48 +2,77 @@
 
 function obtenerCarrito() {
 
-    let carrito =
+    const carritoGuardado =
         JSON.parse(
             localStorage.getItem("carrito")
         ) || [];
 
 
-    const carritoSinRepetidos = [];
+    const carrito =
+        [];
 
 
-    carrito.forEach(function(producto) {
+    carritoGuardado.forEach(
+        function(producto) {
 
-        const existe =
-            carritoSinRepetidos.some(
-                function(guardado) {
+            const existe =
+                carrito.some(
+                    function(productoGuardado) {
 
-                    return (
-                        guardado.nombre ===
-                        producto.nombre
-                    );
+                        return (
+                            productoGuardado.nombre ===
+                            producto.nombre
+                        );
 
-                }
-            );
+                    }
+                );
 
 
-        if (!existe) {
+            if (!existe) {
 
-            carritoSinRepetidos.push({
+                carrito.push({
 
-                nombre: producto.nombre,
+                    nombre: producto.nombre,
 
-                precio: producto.precio,
+                    precio: Number(
+                        producto.precio
+                    ),
 
-                cantidad: 1
+                    cantidad: 1
 
-            });
+                });
+
+            }
 
         }
+    );
 
-    });
+
+    const necesitaActualizar =
+        carritoGuardado.length !==
+        carrito.length ||
+        carritoGuardado.some(
+            function(producto) {
+
+                return (
+                    producto.cantidad !== 1
+                );
+
+            }
+        );
 
 
-    return carritoSinRepetidos;
+    if (necesitaActualizar) {
+
+        localStorage.setItem(
+            "carrito",
+            JSON.stringify(carrito)
+        );
+
+    }
+
+
+    return carrito;
 
 }
 
@@ -63,11 +92,7 @@ function guardarCarrito(carrito) {
 
 function obtenerCantidadCarrito() {
 
-    const carrito =
-        obtenerCarrito();
-
-
-    return carrito.length;
+    return obtenerCarrito().length;
 
 }
 
@@ -89,6 +114,9 @@ function actualizarContadorCarrito() {
 
 }
 
+
+
+/* carrito en la barra superior */
 
 function agregarCarritoNavbar() {
 
@@ -184,7 +212,7 @@ agregarCarritoNavbar();
 
 
 
-/* formulario contacto */
+/* contacto */
 
 const formularioContacto =
     document.getElementById(
@@ -439,13 +467,124 @@ if (botonesFiltro.length > 0) {
 
 
 
-/* agregar servicio al carrito */
+/* botones de detalle */
 
 const botonesAgregar =
     document.querySelectorAll(
         ".agregar-carrito"
     );
 
+
+function agregarBotonVerCarrito(
+    boton
+) {
+
+    const acciones =
+        boton.closest(
+            ".acciones-detalle"
+        );
+
+
+    if (!acciones) {
+
+        return;
+
+    }
+
+
+    if (
+        acciones.querySelector(
+            ".ver-carrito-detalle"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const enlace =
+        document.createElement("a");
+
+
+    enlace.href =
+        "carrito.html";
+
+
+    enlace.textContent =
+        "Ver carrito";
+
+
+    enlace.classList.add(
+        "boton",
+        "boton-secundario",
+        "ver-carrito-detalle"
+    );
+
+
+    acciones.appendChild(
+        enlace
+    );
+
+}
+
+
+function actualizarEstadoBotonesDetalle() {
+
+    const carrito =
+        obtenerCarrito();
+
+
+    botonesAgregar.forEach(
+        function(boton) {
+
+            const nombre =
+                boton.getAttribute(
+                    "data-nombre"
+                );
+
+
+            const existe =
+                carrito.some(
+                    function(producto) {
+
+                        return (
+                            producto.nombre ===
+                            nombre
+                        );
+
+                    }
+                );
+
+
+            if (existe) {
+
+                boton.textContent =
+                    "Ya está en el carrito";
+
+
+                agregarBotonVerCarrito(
+                    boton
+                );
+
+            } else {
+
+                boton.textContent =
+                    "Agregar al carrito";
+
+            }
+
+        }
+    );
+
+}
+
+
+actualizarEstadoBotonesDetalle();
+
+
+
+/* agregar servicio */
 
 botonesAgregar.forEach(
     function(boton) {
@@ -513,14 +652,15 @@ botonesAgregar.forEach(
                     );
 
 
+                    agregarBotonVerCarrito(
+                        boton
+                    );
+
+
                     setTimeout(function() {
 
                         mensaje.classList.remove(
                             "mostrar"
-                        );
-
-                        mensaje.classList.remove(
-                            "mensaje-aviso"
                         );
 
                     }, 2500);
@@ -561,6 +701,15 @@ botonesAgregar.forEach(
                 );
 
 
+                boton.textContent =
+                    "Ya está en el carrito";
+
+
+                agregarBotonVerCarrito(
+                    boton
+                );
+
+
                 setTimeout(function() {
 
                     mensaje.classList.remove(
@@ -598,12 +747,25 @@ function mostrarCarrito() {
         obtenerCarrito();
 
 
-    guardarCarrito(
-        carrito
-    );
-
-
     listaCarrito.innerHTML = "";
+
+
+    const resumenCantidad =
+        document.getElementById(
+            "resumen-cantidad"
+        );
+
+
+    const totalCarrito =
+        document.getElementById(
+            "total-carrito"
+        );
+
+
+    const botonPagar =
+        document.getElementById(
+            "boton-pagar"
+        );
 
 
     if (carrito.length === 0) {
@@ -632,26 +794,31 @@ function mostrarCarrito() {
         `;
 
 
-        document.getElementById(
-            "resumen-cantidad"
-        ).textContent = "0";
+        if (resumenCantidad) {
+
+            resumenCantidad.textContent =
+                "0";
+
+        }
 
 
-        document.getElementById(
-            "total-carrito"
-        ).textContent = "$0";
+        if (totalCarrito) {
 
+            totalCarrito.textContent =
+                "$0";
 
-        const botonPagar =
-            document.getElementById(
-                "boton-pagar"
-            );
+        }
 
 
         if (botonPagar) {
 
             botonPagar.classList.add(
                 "boton-deshabilitado"
+            );
+
+            botonPagar.setAttribute(
+                "aria-disabled",
+                "true"
             );
 
         }
@@ -662,13 +829,29 @@ function mostrarCarrito() {
     }
 
 
+    if (botonPagar) {
+
+        botonPagar.classList.remove(
+            "boton-deshabilitado"
+        );
+
+        botonPagar.removeAttribute(
+            "aria-disabled"
+        );
+
+    }
+
+
     let total = 0;
 
 
     carrito.forEach(
         function(producto, indice) {
 
-            total += producto.precio;
+            total +=
+                Number(
+                    producto.precio
+                );
 
 
             const productoHTML =
@@ -691,7 +874,7 @@ function mostrarCarrito() {
                     </h2>
 
                     <p>
-                        Servicio para el vehículo
+                        Servicio seleccionado para el vehículo
                     </p>
 
                 </div>
@@ -700,10 +883,11 @@ function mostrarCarrito() {
                 <div class="producto-carrito-precio">
 
                     <strong>
-                        $${producto.precio.toLocaleString("es-MX")}
+                        $${Number(producto.precio).toLocaleString("es-MX")}
                     </strong>
 
                     <button
+                        type="button"
                         class="eliminar-producto"
                         data-indice="${indice}"
                     >
@@ -723,19 +907,23 @@ function mostrarCarrito() {
     );
 
 
-    document.getElementById(
-        "resumen-cantidad"
-    ).textContent =
-        carrito.length;
+    if (resumenCantidad) {
+
+        resumenCantidad.textContent =
+            carrito.length;
+
+    }
 
 
-    document.getElementById(
-        "total-carrito"
-    ).textContent =
-        "$" +
-        total.toLocaleString(
-            "es-MX"
-        );
+    if (totalCarrito) {
+
+        totalCarrito.textContent =
+            "$" +
+            total.toLocaleString(
+                "es-MX"
+            );
+
+    }
 
 
     activarBotonesEliminar();
@@ -744,7 +932,7 @@ function mostrarCarrito() {
 
 
 
-/* eliminar servicio */
+/* eliminar del carrito */
 
 function activarBotonesEliminar() {
 
@@ -799,7 +987,7 @@ mostrarCarrito();
 
 
 
-/* resumen checkout */
+/* resumen de compra */
 
 const checkoutProductos =
     document.getElementById(
@@ -813,6 +1001,12 @@ if (checkoutProductos) {
         obtenerCarrito();
 
 
+    const checkoutTotal =
+        document.getElementById(
+            "checkout-total"
+        );
+
+
     let total = 0;
 
 
@@ -823,67 +1017,97 @@ if (checkoutProductos) {
 
         checkoutProductos.innerHTML = `
 
-            <div class="checkout-vacio">
+            <div class="carrito-vacio">
+
+                <h2>
+                    No hay servicios seleccionados
+                </h2>
 
                 <p>
-                    No hay servicios en el carrito.
+                    Agrega un servicio para continuar
+                    con tu compra.
                 </p>
+
+                <a
+                    href="catalogo.html"
+                    class="boton boton-principal"
+                >
+                    Ver catálogo
+                </a>
 
             </div>
 
         `;
 
-    }
+
+        if (checkoutTotal) {
+
+            checkoutTotal.textContent =
+                "$0";
+
+        }
+
+    } else {
+
+        carrito.forEach(
+            function(producto) {
+
+                total +=
+                    Number(
+                        producto.precio
+                    );
 
 
-    carrito.forEach(
-        function(producto) {
+                const fila =
+                    document.createElement(
+                        "div"
+                    );
 
-            total += producto.precio;
 
-
-            const fila =
-                document.createElement(
-                    "div"
+                fila.classList.add(
+                    "checkout-producto"
                 );
 
 
-            fila.classList.add(
-                "checkout-producto"
-            );
+                fila.innerHTML = `
+
+                    <div>
+
+                        <strong>
+                            ${producto.nombre}
+                        </strong>
+
+                        <p>
+                            Servicio para el vehículo
+                        </p>
+
+                    </div>
+
+                    <span>
+                        $${Number(producto.precio).toLocaleString("es-MX")}
+                    </span>
+
+                `;
 
 
-            fila.innerHTML = `
+                checkoutProductos.appendChild(
+                    fila
+                );
 
-                <div>
-
-                    <strong>
-                        ${producto.nombre}
-                    </strong>
-
-                </div>
-
-                <span>
-                    $${producto.precio.toLocaleString("es-MX")}
-                </span>
-
-            `;
+            }
+        );
 
 
-            checkoutProductos.appendChild(
-                fila
-            );
+        if (checkoutTotal) {
+
+            checkoutTotal.textContent =
+                "$" +
+                total.toLocaleString(
+                    "es-MX"
+                );
 
         }
-    );
 
-
-    document.getElementById(
-        "checkout-total"
-    ).textContent =
-        "$" +
-        total.toLocaleString(
-            "es-MX"
-        );
+    }
 
 }
