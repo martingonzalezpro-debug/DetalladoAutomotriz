@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Panel administrativo | Dr. Chulo</title>
+    <title>Pedidos | Dr. Chulo</title>
 
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/admin.css">
@@ -31,11 +31,12 @@
                 ADMINISTRACIÓN
             </p>
 
+
             <nav class="admin-menu">
 
                 <a
                     href="admin.html"
-                    class="admin-enlace activo"
+                    class="admin-enlace"
                 >
                     Inicio
                 </a>
@@ -49,13 +50,13 @@
 
                 <a
                     href="admin-pedidos.html"
-                    class="admin-enlace"
+                    class="admin-enlace activo"
                 >
                     Pedidos
                 </a>
 
                 <a
-                    href="#promociones"
+                    href="admin.html#promociones"
                     class="admin-enlace"
                 >
                     Promociones
@@ -85,75 +86,21 @@
                 <div>
 
                     <p class="admin-subtitulo">
-                        DR. CHULO
+                        PEDIDOS
                     </p>
 
                     <h1>
-                        Panel administrativo
+                        Todos los pedidos
                     </h1>
 
                 </div>
 
+
                 <div class="admin-usuario">
-                    Administrador
+                    5 pedidos
                 </div>
 
             </header>
-
-
-            <section class="admin-resumen">
-
-                <article class="admin-resumen-tarjeta">
-
-                    <p>
-                        Productos
-                    </p>
-
-                    <h2 id="total-productos">
-                        8
-                    </h2>
-
-                    <a href="admin-productos.html">
-                        Gestionar productos
-                    </a>
-
-                </article>
-
-
-                <article class="admin-resumen-tarjeta">
-
-                    <p>
-                        Pedidos
-                    </p>
-
-                    <h2>
-                        5
-                    </h2>
-
-                    <a href="admin-pedidos.html">
-                        Ver todos los pedidos
-                    </a>
-
-                </article>
-
-
-                <article class="admin-resumen-tarjeta">
-
-                    <p>
-                        Promociones
-                    </p>
-
-                    <h2>
-                        2
-                    </h2>
-
-                    <a href="#promociones">
-                        Ver promociones
-                    </a>
-
-                </article>
-
-            </section>
 
 
             <section class="admin-seccion">
@@ -163,22 +110,14 @@
                     <div>
 
                         <p class="admin-subtitulo">
-                            ACTIVIDAD
+                            REGISTRO
                         </p>
 
                         <h2>
-                            Pedidos recientes
+                            Lista de pedidos
                         </h2>
 
                     </div>
-
-
-                    <a
-                        href="admin-pedidos.html"
-                        class="admin-boton-secundario"
-                    >
-                        Ver todos los pedidos
-                    </a>
 
                 </div>
 
@@ -237,9 +176,11 @@
                                 </td>
 
                                 <td>
+
                                     <span class="estado pendiente">
                                         Pendiente
                                     </span>
+
                                 </td>
 
                             </tr>
@@ -264,9 +205,11 @@
                                 </td>
 
                                 <td>
+
                                     <span class="estado proceso">
                                         En proceso
                                     </span>
+
                                 </td>
 
                             </tr>
@@ -291,9 +234,69 @@
                                 </td>
 
                                 <td>
+
                                     <span class="estado terminado">
                                         Terminado
                                     </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    #0012
+                                </td>
+
+                                <td>
+                                    Andrea
+                                </td>
+
+                                <td>
+                                    Descontaminación de vidrios
+                                </td>
+
+                                <td>
+                                    $350
+                                </td>
+
+                                <td>
+
+                                    <span class="estado terminado">
+                                        Terminado
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    #0011
+                                </td>
+
+                                <td>
+                                    Miguel
+                                </td>
+
+                                <td>
+                                    Nano Ceramic
+                                </td>
+
+                                <td>
+                                    $3,300
+                                </td>
+
+                                <td>
+
+                                    <span class="estado terminado">
+                                        Terminado
+                                    </span>
+
                                 </td>
 
                             </tr>
@@ -304,67 +307,15 @@
 
                 </div>
 
-            </section>
 
+                <div style="margin-top: 25px;">
 
-            <section
-                class="admin-seccion"
-                id="promociones"
-            >
-
-                <div class="admin-seccion-encabezado">
-
-                    <div>
-
-                        <p class="admin-subtitulo">
-                            MARKETING
-                        </p>
-
-                        <h2>
-                            Promociones activas
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="admin-promociones">
-
-                    <article class="admin-promocion">
-
-                        <span>
-                            ACTIVA
-                        </span>
-
-                        <h3>
-                            Restauración de faros
-                        </h3>
-
-                        <p>
-                            Promoción especial en servicio
-                            de restauración de faros.
-                        </p>
-
-                    </article>
-
-
-                    <article class="admin-promocion">
-
-                        <span>
-                            ACTIVA
-                        </span>
-
-                        <h3>
-                            Protección exterior
-                        </h3>
-
-                        <p>
-                            Promoción en servicios seleccionados
-                            de protección exterior.
-                        </p>
-
-                    </article>
+                    <a
+                        href="admin.html"
+                        class="admin-boton-secundario"
+                    >
+                        Volver al panel
+                    </a>
 
                 </div>
 
@@ -373,9 +324,6 @@
         </main>
 
     </div>
-
-
-    <script src="js/admin.js"></script>
 
 </body>
 

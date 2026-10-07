@@ -9,7 +9,7 @@ const productosIniciales = [
         precio: 250,
         etiqueta: "Popular",
         descripcion:
-            "Lavado exterior, aspirado interior y limpieza básica."
+            "Lavado exterior, aspirado interior, limpieza de plásticos, vidrios y cuidado general del vehículo."
     },
 
     {
@@ -19,7 +19,7 @@ const productosIniciales = [
         precio: 1200,
         etiqueta: "",
         descripcion:
-            "Limpieza profunda de asientos, alfombras y plásticos."
+            "Lavado profundo de asientos, techo, plásticos, alfombra, tapetes y eliminación de malos olores."
     },
 
     {
@@ -29,7 +29,7 @@ const productosIniciales = [
         precio: 1600,
         etiqueta: "",
         descripcion:
-            "Descontaminación, pulido y protección exterior."
+            "Servicio de limpieza, descontaminación y protección exterior con Cera Soft99."
     },
 
     {
@@ -39,7 +39,7 @@ const productosIniciales = [
         precio: 3300,
         etiqueta: "Nuevo",
         descripcion:
-            "Protección cerámica con duración aproximada de dos años."
+            "Corrección de pintura y protección cerámica para mejorar brillo y protección exterior."
     },
 
     {
@@ -49,7 +49,7 @@ const productosIniciales = [
         precio: 5200,
         etiqueta: "Premium",
         descripcion:
-            "Protección exterior con recubrimiento de grafeno."
+            "Servicio de corrección y protección exterior con recubrimiento de grafeno."
     },
 
     {
@@ -59,7 +59,7 @@ const productosIniciales = [
         precio: 450,
         etiqueta: "Oferta",
         descripcion:
-            "Recuperación de transparencia y brillo en los faros."
+            "Restauración de faros para recuperar transparencia, apariencia y mejorar su acabado."
     },
 
     {
@@ -69,7 +69,7 @@ const productosIniciales = [
         precio: 350,
         etiqueta: "",
         descripcion:
-            "Eliminación de minerales y contaminación adherida."
+            "Eliminación de contaminación mineral adherida en los vidrios y aplicación de protección."
     },
 
     {
@@ -79,10 +79,11 @@ const productosIniciales = [
         precio: 300,
         etiqueta: "",
         descripcion:
-            "Pulido para reducir marcas y recuperar claridad."
+            "Pulido del plástico del clúster para disminuir marcas y recuperar claridad."
     }
 
 ];
+
 
 
 function obtenerProductosAdmin() {
@@ -114,7 +115,10 @@ function obtenerProductosAdmin() {
 }
 
 
-function guardarProductosAdmin(productos) {
+
+function guardarProductosAdmin(
+    productos
+) {
 
     localStorage.setItem(
         "productosAdmin",
@@ -125,7 +129,7 @@ function guardarProductosAdmin(productos) {
 
 
 
-/* total del panel */
+/* total */
 
 const totalProductos =
     document.getElementById(
@@ -142,7 +146,7 @@ if (totalProductos) {
 
 
 
-/* gestion */
+/* elementos */
 
 const tablaProductos =
     document.getElementById(
@@ -162,13 +166,13 @@ const formularioProducto =
     );
 
 
-const botonAbrirFormulario =
+const botonAbrir =
     document.getElementById(
         "abrir-formulario-producto"
     );
 
 
-const botonCerrarFormulario =
+const botonCerrar =
     document.getElementById(
         "cerrar-formulario-producto"
     );
@@ -179,6 +183,9 @@ const botonCancelar =
         "cancelar-producto"
     );
 
+
+
+/* formulario */
 
 function mostrarFormulario() {
 
@@ -191,6 +198,7 @@ function mostrarFormulario() {
     }
 
 }
+
 
 
 function ocultarFormulario() {
@@ -211,15 +219,16 @@ function ocultarFormulario() {
     }
 
 
-    const campoId =
+    const id =
         document.getElementById(
             "producto-id"
         );
 
 
-    if (campoId) {
+    if (id) {
 
-        campoId.value = "";
+        id.value =
+            "";
 
     }
 
@@ -240,9 +249,10 @@ function ocultarFormulario() {
 }
 
 
-if (botonAbrirFormulario) {
 
-    botonAbrirFormulario.addEventListener(
+if (botonAbrir) {
+
+    botonAbrir.addEventListener(
         "click",
         function() {
 
@@ -256,14 +266,16 @@ if (botonAbrirFormulario) {
 }
 
 
-if (botonCerrarFormulario) {
 
-    botonCerrarFormulario.addEventListener(
+if (botonCerrar) {
+
+    botonCerrar.addEventListener(
         "click",
         ocultarFormulario
     );
 
 }
+
 
 
 if (botonCancelar) {
@@ -277,7 +289,7 @@ if (botonCancelar) {
 
 
 
-/* mostrar productos */
+/* tabla */
 
 function mostrarProductosAdmin() {
 
@@ -292,7 +304,8 @@ function mostrarProductosAdmin() {
         obtenerProductosAdmin();
 
 
-    tablaProductos.innerHTML = "";
+    tablaProductos.innerHTML =
+        "";
 
 
     productos.forEach(
@@ -310,7 +323,8 @@ function mostrarProductosAdmin() {
 
             if (!etiqueta) {
 
-                etiqueta = "-";
+                etiqueta =
+                    "-";
 
             }
 
@@ -384,7 +398,7 @@ function mostrarProductosAdmin() {
 
 
 
-/* agregar y editar */
+/* guardar */
 
 if (formularioProducto) {
 
@@ -442,8 +456,8 @@ if (formularioProducto) {
                         function(producto) {
 
                             return (
-                                producto.id ===
-                                Number(id)
+                                String(producto.id) ===
+                                String(id)
                             );
 
                         }
@@ -459,7 +473,7 @@ if (formularioProducto) {
                         categoria;
 
                     producto.precio =
-                        precio;
+                        Number(precio);
 
                     producto.etiqueta =
                         etiqueta;
@@ -471,25 +485,32 @@ if (formularioProducto) {
 
             } else {
 
-                let nuevoId =
-                    Date.now();
+                const nuevoProducto = {
+
+                    id:
+                        Date.now(),
+
+                    nombre:
+                        nombre,
+
+                    categoria:
+                        categoria,
+
+                    precio:
+                        Number(precio),
+
+                    etiqueta:
+                        etiqueta,
+
+                    descripcion:
+                        descripcion
+
+                };
 
 
-                productos.push({
-
-                    id: nuevoId,
-
-                    nombre: nombre,
-
-                    categoria: categoria,
-
-                    precio: precio,
-
-                    etiqueta: etiqueta,
-
-                    descripcion: descripcion
-
-                });
+                productos.push(
+                    nuevoProducto
+                );
 
             }
 
@@ -534,10 +555,8 @@ function activarBotonesProductos() {
                 function() {
 
                     const id =
-                        Number(
-                            boton.getAttribute(
-                                "data-id"
-                            )
+                        boton.getAttribute(
+                            "data-id"
                         );
 
 
@@ -550,7 +569,8 @@ function activarBotonesProductos() {
                             function(producto) {
 
                                 return (
-                                    producto.id === id
+                                    String(producto.id) ===
+                                    String(id)
                                 );
 
                             }
@@ -632,10 +652,8 @@ function activarBotonesProductos() {
                 function() {
 
                     const id =
-                        Number(
-                            boton.getAttribute(
-                                "data-id"
-                            )
+                        boton.getAttribute(
+                            "data-id"
                         );
 
 
@@ -661,7 +679,8 @@ function activarBotonesProductos() {
                             function(producto) {
 
                                 return (
-                                    producto.id !== id
+                                    String(producto.id) !==
+                                    String(id)
                                 );
 
                             }

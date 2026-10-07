@@ -1,10 +1,449 @@
+/* productos */
+
+const productosIniciales = [
+
+    {
+        id: 1,
+        nombre: "Paquete Clásico",
+        categoria: "Lavado",
+        precio: 250,
+        etiqueta: "Popular",
+        descripcion:
+            "Lavado exterior, aspirado interior, limpieza de plásticos, vidrios y cuidado general del vehículo."
+    },
+
+    {
+        id: 2,
+        nombre: "Paquete Interior Completo",
+        categoria: "Interior",
+        precio: 1200,
+        etiqueta: "",
+        descripcion:
+            "Lavado profundo de asientos, techo, plásticos, alfombra, tapetes y eliminación de malos olores."
+    },
+
+    {
+        id: 3,
+        nombre: "Exterior Completo - Cera Soft99",
+        categoria: "Exterior",
+        precio: 1600,
+        etiqueta: "",
+        descripcion:
+            "Servicio de limpieza, descontaminación y protección exterior con Cera Soft99."
+    },
+
+    {
+        id: 4,
+        nombre: "Nano Ceramic",
+        categoria: "Exterior",
+        precio: 3300,
+        etiqueta: "Nuevo",
+        descripcion:
+            "Corrección de pintura y protección cerámica para mejorar brillo y protección exterior."
+    },
+
+    {
+        id: 5,
+        nombre: "Graphene Ceramic",
+        categoria: "Exterior",
+        precio: 5200,
+        etiqueta: "Premium",
+        descripcion:
+            "Servicio de corrección y protección exterior con recubrimiento de grafeno."
+    },
+
+    {
+        id: 6,
+        nombre: "Restauración de faros",
+        categoria: "Restauración",
+        precio: 450,
+        etiqueta: "Oferta",
+        descripcion:
+            "Restauración de faros para recuperar transparencia, apariencia y mejorar su acabado."
+    },
+
+    {
+        id: 7,
+        nombre: "Descontaminación de vidrios",
+        categoria: "Restauración",
+        precio: 350,
+        etiqueta: "",
+        descripcion:
+            "Eliminación de contaminación mineral adherida en los vidrios y aplicación de protección."
+    },
+
+    {
+        id: 8,
+        nombre: "Pulido de clúster",
+        categoria: "Restauración",
+        precio: 300,
+        etiqueta: "",
+        descripcion:
+            "Pulido del plástico del clúster para disminuir marcas y recuperar claridad."
+    }
+
+];
+
+
+function obtenerProductosTienda() {
+
+    let productos =
+        JSON.parse(
+            localStorage.getItem(
+                "productosAdmin"
+            )
+        );
+
+
+    if (!productos) {
+
+        productos =
+            productosIniciales;
+
+
+        localStorage.setItem(
+            "productosAdmin",
+            JSON.stringify(productos)
+        );
+
+    }
+
+
+    return productos;
+
+}
+
+
+
+/* catalogo */
+
+function mostrarCatalogo() {
+
+    const catalogo =
+        document.getElementById(
+            "catalogo-productos"
+        );
+
+
+    if (!catalogo) {
+
+        return;
+
+    }
+
+
+    const productos =
+        obtenerProductosTienda();
+
+
+    catalogo.innerHTML =
+        "";
+
+
+    productos.forEach(
+        function(producto) {
+
+            const servicio =
+                document.createElement(
+                    "article"
+                );
+
+
+            servicio.className =
+                "servicio";
+
+
+            servicio.setAttribute(
+                "data-categoria",
+                producto.categoria
+                    .toLowerCase()
+            );
+
+
+            let etiquetaHTML =
+                "";
+
+
+            if (producto.etiqueta) {
+
+                etiquetaHTML = `
+
+                    <span class="etiqueta-servicio">
+                        ${producto.etiqueta}
+                    </span>
+
+                `;
+
+            }
+
+
+            servicio.innerHTML = `
+
+                <div class="servicio-imagen">
+
+                    Imagen del servicio
+
+                </div>
+
+
+                <div class="servicio-contenido">
+
+                    ${etiquetaHTML}
+
+                    <h2>
+                        ${producto.nombre}
+                    </h2>
+
+                    <p>
+                        ${producto.descripcion}
+                    </p>
+
+                    <h3>
+                        Desde $${Number(producto.precio).toLocaleString("es-MX")}
+                    </h3>
+
+                    <a
+                        href="detalle-producto.html?id=${producto.id}"
+                        class="boton-detalle"
+                    >
+                        Ver detalle
+                    </a>
+
+                </div>
+
+            `;
+
+
+            catalogo.appendChild(
+                servicio
+            );
+
+        }
+    );
+
+}
+
+
+
+/* detalle automatico */
+
+function mostrarDetalleProducto() {
+
+    const contenedor =
+        document.getElementById(
+            "detalle-producto-dinamico"
+        );
+
+
+    if (!contenedor) {
+
+        return;
+
+    }
+
+
+    const parametros =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const id =
+        parametros.get("id");
+
+
+    const productos =
+        obtenerProductosTienda();
+
+
+    const producto =
+        productos.find(
+            function(producto) {
+
+                return (
+                    String(producto.id) ===
+                    String(id)
+                );
+
+            }
+        );
+
+
+    if (!producto) {
+
+        contenedor.innerHTML = `
+
+            <div class="carrito-vacio">
+
+                <h2>
+                    Servicio no encontrado
+                </h2>
+
+                <p>
+                    El servicio que buscas no está disponible.
+                </p>
+
+                <a
+                    href="catalogo.html"
+                    class="boton boton-principal"
+                >
+                    Volver al catálogo
+                </a>
+
+            </div>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    document.title =
+        producto.nombre +
+        " | Dr. Chulo";
+
+
+    const relacionados =
+        productos
+            .filter(
+                function(otroProducto) {
+
+                    return (
+                        String(otroProducto.id) !==
+                        String(producto.id)
+                    );
+
+                }
+            )
+            .slice(0, 3);
+
+
+    let relacionadosHTML =
+        "";
+
+
+    relacionados.forEach(
+        function(relacionado) {
+
+            relacionadosHTML += `
+
+                <a
+                    href="detalle-producto.html?id=${relacionado.id}"
+                    class="relacionado"
+                >
+
+                    <h3>
+                        ${relacionado.nombre}
+                    </h3>
+
+                    <p>
+                        Desde $${Number(relacionado.precio).toLocaleString("es-MX")}
+                    </p>
+
+                </a>
+
+            `;
+
+        }
+    );
+
+
+    contenedor.innerHTML = `
+
+        <div class="detalle-servicio">
+
+            <div class="detalle-imagen">
+
+                <p>
+                    Imagen del servicio
+                </p>
+
+            </div>
+
+
+            <div class="detalle-info">
+
+                <p class="etiqueta">
+                    ${producto.categoria.toUpperCase()}
+                </p>
+
+
+                <h1>
+                    ${producto.nombre}
+                </h1>
+
+
+                <h2>
+                    Desde $${Number(producto.precio).toLocaleString("es-MX")}
+                </h2>
+
+
+                <p>
+                    ${producto.descripcion}
+                </p>
+
+
+                <div class="acciones-detalle">
+
+                    <button
+                        type="button"
+                        class="boton boton-principal agregar-carrito"
+                        data-nombre="${producto.nombre}"
+                        data-precio="${producto.precio}"
+                    >
+                        Agregar al carrito
+                    </button>
+
+
+                    <a
+                        href="catalogo.html"
+                        class="boton boton-secundario"
+                    >
+                        Regresar al catálogo
+                    </a>
+
+                </div>
+
+
+                <div class="mensaje-carrito">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <section class="relacionados">
+
+            <h2>
+                También te puede interesar
+            </h2>
+
+            <div class="relacionados-grid">
+
+                ${relacionadosHTML}
+
+            </div>
+
+        </section>
+
+    `;
+
+}
+
+
+
 /* carrito */
 
 function obtenerCarrito() {
 
     const carritoGuardado =
         JSON.parse(
-            localStorage.getItem("carrito")
+            localStorage.getItem(
+                "carrito"
+            )
         ) || [];
 
 
@@ -32,11 +471,13 @@ function obtenerCarrito() {
 
                 carrito.push({
 
-                    nombre: producto.nombre,
+                    nombre:
+                        producto.nombre,
 
-                    precio: Number(
-                        producto.precio
-                    ),
+                    precio:
+                        Number(
+                            producto.precio
+                        ),
 
                     cantidad: 1
 
@@ -48,28 +489,10 @@ function obtenerCarrito() {
     );
 
 
-    const necesitaActualizar =
-        carritoGuardado.length !==
-        carrito.length ||
-        carritoGuardado.some(
-            function(producto) {
-
-                return (
-                    producto.cantidad !== 1
-                );
-
-            }
-        );
-
-
-    if (necesitaActualizar) {
-
-        localStorage.setItem(
-            "carrito",
-            JSON.stringify(carrito)
-        );
-
-    }
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
 
 
     return carrito;
@@ -77,7 +500,10 @@ function obtenerCarrito() {
 }
 
 
-function guardarCarrito(carrito) {
+
+function guardarCarrito(
+    carrito
+) {
 
     localStorage.setItem(
         "carrito",
@@ -90,11 +516,13 @@ function guardarCarrito(carrito) {
 }
 
 
+
 function obtenerCantidadCarrito() {
 
     return obtenerCarrito().length;
 
 }
+
 
 
 function actualizarContadorCarrito() {
@@ -116,12 +544,14 @@ function actualizarContadorCarrito() {
 
 
 
-/* carrito en la barra superior */
+/* carrito barra */
 
 function agregarCarritoNavbar() {
 
     const menu =
-        document.querySelector(".menu");
+        document.querySelector(
+            ".menu"
+        );
 
 
     if (!menu) {
@@ -131,11 +561,13 @@ function agregarCarritoNavbar() {
     }
 
 
-    if (
+    const existente =
         document.querySelector(
             ".enlace-carrito"
-        )
-    ) {
+        );
+
+
+    if (existente) {
 
         actualizarContadorCarrito();
 
@@ -144,60 +576,66 @@ function agregarCarritoNavbar() {
     }
 
 
-    const elementoCarrito =
-        document.createElement("li");
+    const li =
+        document.createElement(
+            "li"
+        );
 
 
-    const enlaceCarrito =
-        document.createElement("a");
+    const enlace =
+        document.createElement(
+            "a"
+        );
 
 
-    enlaceCarrito.href =
+    enlace.href =
         "carrito.html";
 
 
-    enlaceCarrito.classList.add(
-        "enlace-carrito"
+    enlace.className =
+        "enlace-carrito";
+
+
+    enlace.title =
+        "Carrito";
+
+
+    enlace.innerHTML = `
+
+        <span class="carrito-icono">
+            🛒
+        </span>
+
+        <span
+            id="contador-carrito"
+            class="carrito-contador"
+        >
+            0
+        </span>
+
+    `;
+
+
+    li.appendChild(
+        enlace
     );
 
 
-    if (
-        window.location.pathname.includes(
-            "carrito.html"
-        )
-    ) {
-
-        enlaceCarrito.classList.add(
-            "activo"
-        );
-
-    }
-
-
-    enlaceCarrito.innerHTML =
-        'Carrito (<span id="contador-carrito">0</span>)';
-
-
-    elementoCarrito.appendChild(
-        enlaceCarrito
-    );
-
-
-    const ultimoElemento =
+    const ultimo =
         menu.lastElementChild;
 
 
-    if (ultimoElemento) {
+    if (ultimo) {
 
         menu.insertBefore(
-            elementoCarrito,
-            ultimoElemento
+            li,
+            ultimo
         );
 
     } else {
 
         menu.appendChild(
-            elementoCarrito
+            li
         );
 
     }
@@ -208,209 +646,38 @@ function agregarCarritoNavbar() {
 }
 
 
-agregarCarritoNavbar();
 
+/* filtros */
 
+function activarFiltrosCatalogo() {
 
-/* contacto */
+    const botones =
+        document.querySelectorAll(
+            ".filtro-boton"
+        );
 
-const formularioContacto =
-    document.getElementById(
-        "formulario-contacto"
-    );
 
+    if (botones.length === 0) {
 
-if (formularioContacto) {
+        return;
 
-    formularioContacto.addEventListener(
-        "submit",
-        function(evento) {
+    }
 
-            evento.preventDefault();
 
-
-            const mensajeExito =
-                document.getElementById(
-                    "mensaje-exito"
-                );
-
-
-            mensajeExito.classList.add(
-                "mostrar"
-            );
-
-
-            formularioContacto.reset();
-
-
-            setTimeout(function() {
-
-                mensajeExito.classList.remove(
-                    "mostrar"
-                );
-
-            }, 4000);
-
-        }
-    );
-
-}
-
-
-
-/* registro */
-
-const formularioRegistro =
-    document.getElementById(
-        "formulario-registro"
-    );
-
-
-if (formularioRegistro) {
-
-    formularioRegistro.addEventListener(
-        "submit",
-        function(evento) {
-
-            evento.preventDefault();
-
-
-            const mensajeRegistro =
-                document.getElementById(
-                    "registro-exito"
-                );
-
-
-            mensajeRegistro.classList.add(
-                "mostrar"
-            );
-
-
-            setTimeout(function() {
-
-                window.location.href =
-                    "login.html";
-
-            }, 1200);
-
-        }
-    );
-
-}
-
-
-
-/* login */
-
-const formularioLogin =
-    document.getElementById(
-        "formulario-login"
-    );
-
-
-if (formularioLogin) {
-
-    formularioLogin.addEventListener(
-        "submit",
-        function(evento) {
-
-            evento.preventDefault();
-
-
-            const mensajeLogin =
-                document.getElementById(
-                    "login-exito"
-                );
-
-
-            mensajeLogin.classList.add(
-                "mostrar"
-            );
-
-
-            setTimeout(function() {
-
-                window.location.href =
-                    "perfil.html";
-
-            }, 1200);
-
-        }
-    );
-
-}
-
-
-
-/* cerrar sesion */
-
-const botonCerrarSesion =
-    document.getElementById(
-        "cerrar-sesion"
-    );
-
-
-if (botonCerrarSesion) {
-
-    botonCerrarSesion.addEventListener(
-        "click",
-        function() {
-
-            const mensajeSesion =
-                document.getElementById(
-                    "mensaje-sesion"
-                );
-
-
-            mensajeSesion.classList.add(
-                "mostrar"
-            );
-
-
-            setTimeout(function() {
-
-                window.location.href =
-                    "index.html";
-
-            }, 1200);
-
-        }
-    );
-
-}
-
-
-
-/* filtros del catalogo */
-
-const botonesFiltro =
-    document.querySelectorAll(
-        ".filtro-boton"
-    );
-
-
-const servicios =
-    document.querySelectorAll(
-        ".servicio"
-    );
-
-
-if (botonesFiltro.length > 0) {
-
-    botonesFiltro.forEach(
+    botones.forEach(
         function(boton) {
 
             boton.addEventListener(
                 "click",
                 function() {
 
-                    const filtroSeleccionado =
+                    const filtro =
                         boton.getAttribute(
                             "data-filtro"
                         );
 
 
-                    botonesFiltro.forEach(
+                    botones.forEach(
                         function(otroBoton) {
 
                             otroBoton.classList.remove(
@@ -426,6 +693,12 @@ if (botonesFiltro.length > 0) {
                     );
 
 
+                    const servicios =
+                        document.querySelectorAll(
+                            ".servicio"
+                        );
+
+
                     servicios.forEach(
                         function(servicio) {
 
@@ -436,10 +709,8 @@ if (botonesFiltro.length > 0) {
 
 
                             if (
-                                filtroSeleccionado ===
-                                "todos" ||
-                                categoria ===
-                                filtroSeleccionado
+                                filtro === "todos" ||
+                                categoria === filtro
                             ) {
 
                                 servicio.classList.remove(
@@ -467,12 +738,220 @@ if (botonesFiltro.length > 0) {
 
 
 
-/* botones de detalle */
+/* agregar servicio */
 
-const botonesAgregar =
-    document.querySelectorAll(
-        ".agregar-carrito"
+function activarBotonesAgregar() {
+
+    const botones =
+        document.querySelectorAll(
+            ".agregar-carrito"
+        );
+
+
+    if (botones.length === 0) {
+
+        return;
+
+    }
+
+
+    const carritoActual =
+        obtenerCarrito();
+
+
+    botones.forEach(
+        function(boton) {
+
+            const nombre =
+                boton.getAttribute(
+                    "data-nombre"
+                );
+
+
+            const yaExiste =
+                carritoActual.some(
+                    function(producto) {
+
+                        return (
+                            producto.nombre ===
+                            nombre
+                        );
+
+                    }
+                );
+
+
+            if (yaExiste) {
+
+                boton.textContent =
+                    "Ya está en el carrito";
+
+
+                agregarBotonVerCarrito(
+                    boton
+                );
+
+            }
+
+
+            boton.addEventListener(
+                "click",
+                function() {
+
+                    const nombre =
+                        boton.getAttribute(
+                            "data-nombre"
+                        );
+
+
+                    const precio =
+                        Number(
+                            boton.getAttribute(
+                                "data-precio"
+                            )
+                        );
+
+
+                    const carrito =
+                        obtenerCarrito();
+
+
+                    const existe =
+                        carrito.some(
+                            function(producto) {
+
+                                return (
+                                    producto.nombre ===
+                                    nombre
+                                );
+
+                            }
+                        );
+
+
+                    const detalle =
+                        boton.closest(
+                            ".detalle-info"
+                        );
+
+
+                    let mensaje = null;
+
+
+                    if (detalle) {
+
+                        mensaje =
+                            detalle.querySelector(
+                                ".mensaje-carrito"
+                            );
+
+                    }
+
+
+                    if (existe) {
+
+                        if (mensaje) {
+
+                            mensaje.textContent =
+                                "Este servicio ya está en tu carrito.";
+
+
+                            mensaje.classList.add(
+                                "mensaje-aviso"
+                            );
+
+
+                            mensaje.classList.add(
+                                "mostrar"
+                            );
+
+
+                            setTimeout(
+                                function() {
+
+                                    mensaje.classList.remove(
+                                        "mostrar"
+                                    );
+
+                                },
+                                2500
+                            );
+
+                        }
+
+
+                        agregarBotonVerCarrito(
+                            boton
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    carrito.push({
+
+                        nombre: nombre,
+
+                        precio: precio,
+
+                        cantidad: 1
+
+                    });
+
+
+                    guardarCarrito(
+                        carrito
+                    );
+
+
+                    boton.textContent =
+                        "Ya está en el carrito";
+
+
+                    agregarBotonVerCarrito(
+                        boton
+                    );
+
+
+                    if (mensaje) {
+
+                        mensaje.textContent =
+                            "Servicio agregado al carrito.";
+
+
+                        mensaje.classList.remove(
+                            "mensaje-aviso"
+                        );
+
+
+                        mensaje.classList.add(
+                            "mostrar"
+                        );
+
+
+                        setTimeout(
+                            function() {
+
+                                mensaje.classList.remove(
+                                    "mostrar"
+                                );
+
+                            },
+                            2500
+                        );
+
+                    }
+
+                }
+            );
+
+        }
     );
+
+}
+
 
 
 function agregarBotonVerCarrito(
@@ -504,22 +983,21 @@ function agregarBotonVerCarrito(
 
 
     const enlace =
-        document.createElement("a");
+        document.createElement(
+            "a"
+        );
 
 
     enlace.href =
         "carrito.html";
 
 
+    enlace.className =
+        "boton boton-secundario ver-carrito-detalle";
+
+
     enlace.textContent =
         "Ver carrito";
-
-
-    enlace.classList.add(
-        "boton",
-        "boton-secundario",
-        "ver-carrito-detalle"
-    );
 
 
     acciones.appendChild(
@@ -529,214 +1007,18 @@ function agregarBotonVerCarrito(
 }
 
 
-function actualizarEstadoBotonesDetalle() {
 
-    const carrito =
-        obtenerCarrito();
-
-
-    botonesAgregar.forEach(
-        function(boton) {
-
-            const nombre =
-                boton.getAttribute(
-                    "data-nombre"
-                );
-
-
-            const existe =
-                carrito.some(
-                    function(producto) {
-
-                        return (
-                            producto.nombre ===
-                            nombre
-                        );
-
-                    }
-                );
-
-
-            if (existe) {
-
-                boton.textContent =
-                    "Ya está en el carrito";
-
-
-                agregarBotonVerCarrito(
-                    boton
-                );
-
-            } else {
-
-                boton.textContent =
-                    "Agregar al carrito";
-
-            }
-
-        }
-    );
-
-}
-
-
-actualizarEstadoBotonesDetalle();
-
-
-
-/* agregar servicio */
-
-botonesAgregar.forEach(
-    function(boton) {
-
-        boton.addEventListener(
-            "click",
-            function() {
-
-                const detalle =
-                    boton.closest(
-                        ".detalle-info"
-                    );
-
-
-                const nombre =
-                    boton.getAttribute(
-                        "data-nombre"
-                    );
-
-
-                const precio =
-                    Number(
-                        boton.getAttribute(
-                            "data-precio"
-                        )
-                    );
-
-
-                let carrito =
-                    obtenerCarrito();
-
-
-                const productoExistente =
-                    carrito.find(
-                        function(producto) {
-
-                            return (
-                                producto.nombre ===
-                                nombre
-                            );
-
-                        }
-                    );
-
-
-                const mensaje =
-                    detalle.querySelector(
-                        ".mensaje-carrito"
-                    );
-
-
-                if (productoExistente) {
-
-                    mensaje.textContent =
-                        "Este servicio ya está en tu carrito.";
-
-
-                    mensaje.classList.add(
-                        "mensaje-aviso"
-                    );
-
-
-                    mensaje.classList.add(
-                        "mostrar"
-                    );
-
-
-                    agregarBotonVerCarrito(
-                        boton
-                    );
-
-
-                    setTimeout(function() {
-
-                        mensaje.classList.remove(
-                            "mostrar"
-                        );
-
-                    }, 2500);
-
-
-                    return;
-
-                }
-
-
-                carrito.push({
-
-                    nombre: nombre,
-
-                    precio: precio,
-
-                    cantidad: 1
-
-                });
-
-
-                guardarCarrito(
-                    carrito
-                );
-
-
-                mensaje.textContent =
-                    "Servicio agregado al carrito.";
-
-
-                mensaje.classList.remove(
-                    "mensaje-aviso"
-                );
-
-
-                mensaje.classList.add(
-                    "mostrar"
-                );
-
-
-                boton.textContent =
-                    "Ya está en el carrito";
-
-
-                agregarBotonVerCarrito(
-                    boton
-                );
-
-
-                setTimeout(function() {
-
-                    mensaje.classList.remove(
-                        "mostrar"
-                    );
-
-                }, 2500);
-
-            }
-        );
-
-    }
-);
-
-
-
-/* mostrar carrito */
-
-const listaCarrito =
-    document.getElementById(
-        "lista-carrito"
-    );
-
+/* carrito pagina */
 
 function mostrarCarrito() {
 
-    if (!listaCarrito) {
+    const lista =
+        document.getElementById(
+            "lista-carrito"
+        );
+
+
+    if (!lista) {
 
         return;
 
@@ -747,16 +1029,13 @@ function mostrarCarrito() {
         obtenerCarrito();
 
 
-    listaCarrito.innerHTML = "";
-
-
-    const resumenCantidad =
+    const cantidad =
         document.getElementById(
             "resumen-cantidad"
         );
 
 
-    const totalCarrito =
+    const totalElemento =
         document.getElementById(
             "total-carrito"
         );
@@ -768,9 +1047,15 @@ function mostrarCarrito() {
         );
 
 
-    if (carrito.length === 0) {
+    lista.innerHTML =
+        "";
 
-        listaCarrito.innerHTML = `
+
+    if (
+        carrito.length === 0
+    ) {
+
+        lista.innerHTML = `
 
             <div class="carrito-vacio">
 
@@ -794,17 +1079,17 @@ function mostrarCarrito() {
         `;
 
 
-        if (resumenCantidad) {
+        if (cantidad) {
 
-            resumenCantidad.textContent =
+            cantidad.textContent =
                 "0";
 
         }
 
 
-        if (totalCarrito) {
+        if (totalElemento) {
 
-            totalCarrito.textContent =
+            totalElemento.textContent =
                 "$0";
 
         }
@@ -814,11 +1099,6 @@ function mostrarCarrito() {
 
             botonPagar.classList.add(
                 "boton-deshabilitado"
-            );
-
-            botonPagar.setAttribute(
-                "aria-disabled",
-                "true"
             );
 
         }
@@ -833,10 +1113,6 @@ function mostrarCarrito() {
 
         botonPagar.classList.remove(
             "boton-deshabilitado"
-        );
-
-        botonPagar.removeAttribute(
-            "aria-disabled"
         );
 
     }
@@ -854,18 +1130,17 @@ function mostrarCarrito() {
                 );
 
 
-            const productoHTML =
+            const elemento =
                 document.createElement(
                     "article"
                 );
 
 
-            productoHTML.classList.add(
-                "producto-carrito"
-            );
+            elemento.className =
+                "producto-carrito";
 
 
-            productoHTML.innerHTML = `
+            elemento.innerHTML = `
 
                 <div class="producto-carrito-info">
 
@@ -874,7 +1149,7 @@ function mostrarCarrito() {
                     </h2>
 
                     <p>
-                        Servicio seleccionado para el vehículo
+                        Servicio seleccionado para este vehículo
                     </p>
 
                 </div>
@@ -899,25 +1174,25 @@ function mostrarCarrito() {
             `;
 
 
-            listaCarrito.appendChild(
-                productoHTML
+            lista.appendChild(
+                elemento
             );
 
         }
     );
 
 
-    if (resumenCantidad) {
+    if (cantidad) {
 
-        resumenCantidad.textContent =
+        cantidad.textContent =
             carrito.length;
 
     }
 
 
-    if (totalCarrito) {
+    if (totalElemento) {
 
-        totalCarrito.textContent =
+        totalElemento.textContent =
             "$" +
             total.toLocaleString(
                 "es-MX"
@@ -926,23 +1201,21 @@ function mostrarCarrito() {
     }
 
 
-    activarBotonesEliminar();
+    activarEliminarCarrito();
 
 }
 
 
 
-/* eliminar del carrito */
+function activarEliminarCarrito() {
 
-function activarBotonesEliminar() {
-
-    const botonesEliminar =
+    const botones =
         document.querySelectorAll(
             ".eliminar-producto"
         );
 
 
-    botonesEliminar.forEach(
+    botones.forEach(
         function(boton) {
 
             boton.addEventListener(
@@ -983,25 +1256,29 @@ function activarBotonesEliminar() {
 }
 
 
-mostrarCarrito();
+
+/* checkout */
+
+function mostrarCheckout() {
+
+    const contenedor =
+        document.getElementById(
+            "checkout-productos"
+        );
 
 
+    if (!contenedor) {
 
-/* resumen de compra */
+        return;
 
-const checkoutProductos =
-    document.getElementById(
-        "checkout-productos"
-    );
+    }
 
-
-if (checkoutProductos) {
 
     const carrito =
         obtenerCarrito();
 
 
-    const checkoutTotal =
+    const totalElemento =
         document.getElementById(
             "checkout-total"
         );
@@ -1010,12 +1287,15 @@ if (checkoutProductos) {
     let total = 0;
 
 
-    checkoutProductos.innerHTML = "";
+    contenedor.innerHTML =
+        "";
 
 
-    if (carrito.length === 0) {
+    if (
+        carrito.length === 0
+    ) {
 
-        checkoutProductos.innerHTML = `
+        contenedor.innerHTML = `
 
             <div class="carrito-vacio">
 
@@ -1024,8 +1304,7 @@ if (checkoutProductos) {
                 </h2>
 
                 <p>
-                    Agrega un servicio para continuar
-                    con tu compra.
+                    Agrega un servicio para continuar.
                 </p>
 
                 <a
@@ -1040,74 +1319,351 @@ if (checkoutProductos) {
         `;
 
 
-        if (checkoutTotal) {
+        if (totalElemento) {
 
-            checkoutTotal.textContent =
+            totalElemento.textContent =
                 "$0";
 
         }
 
-    } else {
 
-        carrito.forEach(
-            function(producto) {
+        return;
 
-                total +=
-                    Number(
-                        producto.precio
-                    );
+    }
 
 
-                const fila =
-                    document.createElement(
-                        "div"
-                    );
+    carrito.forEach(
+        function(producto) {
 
-
-                fila.classList.add(
-                    "checkout-producto"
+            total +=
+                Number(
+                    producto.precio
                 );
 
 
-                fila.innerHTML = `
-
-                    <div>
-
-                        <strong>
-                            ${producto.nombre}
-                        </strong>
-
-                        <p>
-                            Servicio para el vehículo
-                        </p>
-
-                    </div>
-
-                    <span>
-                        $${Number(producto.precio).toLocaleString("es-MX")}
-                    </span>
-
-                `;
-
-
-                checkoutProductos.appendChild(
-                    fila
+            const fila =
+                document.createElement(
+                    "div"
                 );
 
-            }
+
+            fila.className =
+                "checkout-producto";
+
+
+            fila.innerHTML = `
+
+                <div>
+
+                    <strong>
+                        ${producto.nombre}
+                    </strong>
+
+                    <p>
+                        Servicio para este vehículo
+                    </p>
+
+                </div>
+
+                <span>
+                    $${Number(producto.precio).toLocaleString("es-MX")}
+                </span>
+
+            `;
+
+
+            contenedor.appendChild(
+                fila
+            );
+
+        }
+    );
+
+
+    if (totalElemento) {
+
+        totalElemento.textContent =
+            "$" +
+            total.toLocaleString(
+                "es-MX"
+            );
+
+    }
+
+}
+
+
+
+/* contacto */
+
+function activarContacto() {
+
+    const formulario =
+        document.getElementById(
+            "formulario-contacto"
         );
 
 
-        if (checkoutTotal) {
+    if (!formulario) {
 
-            checkoutTotal.textContent =
-                "$" +
-                total.toLocaleString(
-                    "es-MX"
-                );
-
-        }
+        return;
 
     }
+
+
+    formulario.addEventListener(
+        "submit",
+        function(evento) {
+
+            evento.preventDefault();
+
+
+            const mensaje =
+                document.getElementById(
+                    "mensaje-exito"
+                );
+
+
+            if (mensaje) {
+
+                mensaje.classList.add(
+                    "mostrar"
+                );
+
+            }
+
+
+            formulario.reset();
+
+
+            setTimeout(
+                function() {
+
+                    if (mensaje) {
+
+                        mensaje.classList.remove(
+                            "mostrar"
+                        );
+
+                    }
+
+                },
+                4000
+            );
+
+        }
+    );
+
+}
+
+
+
+/* registro */
+
+function activarRegistro() {
+
+    const formulario =
+        document.getElementById(
+            "formulario-registro"
+        );
+
+
+    if (!formulario) {
+
+        return;
+
+    }
+
+
+    formulario.addEventListener(
+        "submit",
+        function(evento) {
+
+            evento.preventDefault();
+
+
+            const mensaje =
+                document.getElementById(
+                    "registro-exito"
+                );
+
+
+            if (mensaje) {
+
+                mensaje.classList.add(
+                    "mostrar"
+                );
+
+            }
+
+
+            setTimeout(
+                function() {
+
+                    window.location.href =
+                        "login.html";
+
+                },
+                1200
+            );
+
+        }
+    );
+
+}
+
+
+
+/* login */
+
+function activarLogin() {
+
+    const formulario =
+        document.getElementById(
+            "formulario-login"
+        );
+
+
+    if (!formulario) {
+
+        return;
+
+    }
+
+
+    formulario.addEventListener(
+        "submit",
+        function(evento) {
+
+            evento.preventDefault();
+
+
+            const mensaje =
+                document.getElementById(
+                    "login-exito"
+                );
+
+
+            if (mensaje) {
+
+                mensaje.classList.add(
+                    "mostrar"
+                );
+
+            }
+
+
+            setTimeout(
+                function() {
+
+                    window.location.href =
+                        "perfil.html";
+
+                },
+                1200
+            );
+
+        }
+    );
+
+}
+
+
+
+/* cerrar sesion */
+
+function activarCerrarSesion() {
+
+    const boton =
+        document.getElementById(
+            "cerrar-sesion"
+        );
+
+
+    if (!boton) {
+
+        return;
+
+    }
+
+
+    boton.addEventListener(
+        "click",
+        function() {
+
+            const mensaje =
+                document.getElementById(
+                    "mensaje-sesion"
+                );
+
+
+            if (mensaje) {
+
+                mensaje.classList.add(
+                    "mostrar"
+                );
+
+            }
+
+
+            setTimeout(
+                function() {
+
+                    window.location.href =
+                        "index.html";
+
+                },
+                1200
+            );
+
+        }
+    );
+
+}
+
+
+
+/* iniciar */
+
+function iniciarApp() {
+
+    mostrarCatalogo();
+
+    mostrarDetalleProducto();
+
+    agregarCarritoNavbar();
+
+    activarFiltrosCatalogo();
+
+    activarBotonesAgregar();
+
+    mostrarCarrito();
+
+    mostrarCheckout();
+
+    activarContacto();
+
+    activarRegistro();
+
+    activarLogin();
+
+    activarCerrarSesion();
+
+}
+
+
+if (
+    document.readyState ===
+    "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        iniciarApp
+    );
+
+} else {
+
+    iniciarApp();
 
 }
