@@ -398,7 +398,7 @@ function mostrarProductosAdmin() {
 
 
 
-/* guardar */
+/* guardar producto */
 
 if (formularioProducto) {
 
@@ -655,19 +655,6 @@ function activarBotonesProductos() {
                         boton.getAttribute(
                             "data-id"
                         );
-
-
-                    const confirmar =
-                        confirm(
-                            "¿Seguro que deseas eliminar este producto?"
-                        );
-
-
-                    if (!confirmar) {
-
-                        return;
-
-                    }
 
 
                     let productos =

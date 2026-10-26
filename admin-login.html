@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Administración | Dr. Chulo</title>
+
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+</head>
+
+<body>
+
+    <main>
+
+        <section class="pagina">
+
+            <div class="contenedor">
+
+                <div class="acceso">
+
+                    <div class="acceso-texto">
+
+                        <p class="etiqueta">
+                            ADMINISTRACIÓN
+                        </p>
+
+                        <h1>
+                            Acceso administrativo
+                        </h1>
+
+                        <p>
+                            Acceso al panel de administración
+                            de Dr. Chulo.
+                        </p>
+
+
+                        <a
+                            href="index.html"
+                            class="boton boton-secundario"
+                            style="margin-top: 25px;"
+                        >
+                            Regresar al sitio
+                        </a>
+
+                    </div>
+
+
+                    <div class="acceso-formulario">
+
+                        <form
+                            id="formulario-admin-login"
+                            novalidate
+                        >
+
+                            <div class="campo">
+
+                                <label for="usuario-admin">
+                                    Usuario
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="usuario-admin"
+                                    placeholder="Usuario"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="contrasena-admin">
+                                    Contraseña
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="contrasena-admin"
+                                    placeholder="Contraseña"
+                                >
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="boton boton-principal boton-acceso"
+                            >
+                                Entrar al panel
+                            </button>
+
+
+                            <div
+                                id="admin-login-exito"
+                                class="mensaje-exito"
+                            >
+                                Acceso correcto.
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

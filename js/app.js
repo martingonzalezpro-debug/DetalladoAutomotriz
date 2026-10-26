@@ -85,6 +85,7 @@ const productosIniciales = [
 ];
 
 
+
 function obtenerProductosTienda() {
 
     let productos =
@@ -225,7 +226,7 @@ function mostrarCatalogo() {
 
 
 
-/* detalle automatico */
+/* detalle producto */
 
 function mostrarDetalleProducto() {
 
@@ -738,7 +739,7 @@ function activarFiltrosCatalogo() {
 
 
 
-/* agregar servicio */
+/* agregar al carrito */
 
 function activarBotonesAgregar() {
 
@@ -835,7 +836,8 @@ function activarBotonesAgregar() {
                         );
 
 
-                    let mensaje = null;
+                    let mensaje =
+                        null;
 
 
                     if (detalle) {
@@ -892,11 +894,14 @@ function activarBotonesAgregar() {
 
                     carrito.push({
 
-                        nombre: nombre,
+                        nombre:
+                            nombre,
 
-                        precio: precio,
+                        precio:
+                            precio,
 
-                        cantidad: 1
+                        cantidad:
+                            1
 
                     });
 
@@ -1008,7 +1013,7 @@ function agregarBotonVerCarrito(
 
 
 
-/* carrito pagina */
+/* mostrar carrito */
 
 function mostrarCarrito() {
 
@@ -1118,7 +1123,8 @@ function mostrarCarrito() {
     }
 
 
-    let total = 0;
+    let total =
+        0;
 
 
     carrito.forEach(
@@ -1207,6 +1213,8 @@ function mostrarCarrito() {
 
 
 
+/* eliminar del carrito */
+
 function activarEliminarCarrito() {
 
     const botones =
@@ -1228,6 +1236,19 @@ function activarEliminarCarrito() {
                                 "data-indice"
                             )
                         );
+
+
+                    const confirmar =
+                        confirm(
+                            "¿Seguro que quieres eliminar este servicio del carrito?"
+                        );
+
+
+                    if (!confirmar) {
+
+                        return;
+
+                    }
 
 
                     const carrito =
@@ -1284,7 +1305,8 @@ function mostrarCheckout() {
         );
 
 
-    let total = 0;
+    let total =
+        0;
 
 
     contenedor.innerHTML =
@@ -1514,7 +1536,7 @@ function activarRegistro() {
 
 
 
-/* login */
+/* login usuario */
 
 function activarLogin() {
 
@@ -1558,6 +1580,62 @@ function activarLogin() {
 
                     window.location.href =
                         "perfil.html";
+
+                },
+                1200
+            );
+
+        }
+    );
+
+}
+
+
+
+/* login administrador */
+
+function activarLoginAdmin() {
+
+    const formulario =
+        document.getElementById(
+            "formulario-admin-login"
+        );
+
+
+    if (!formulario) {
+
+        return;
+
+    }
+
+
+    formulario.addEventListener(
+        "submit",
+        function(evento) {
+
+            evento.preventDefault();
+
+
+            const mensaje =
+                document.getElementById(
+                    "admin-login-exito"
+                );
+
+
+            if (mensaje) {
+
+                mensaje.classList.add(
+                    "mostrar"
+                );
+
+            }
+
+
+            setTimeout(
+                function() {
+
+                    window.location.href =
+                        "admin.html";
 
                 },
                 1200
@@ -1646,6 +1724,8 @@ function iniciarApp() {
     activarRegistro();
 
     activarLogin();
+
+    activarLoginAdmin();
 
     activarCerrarSesion();
 
