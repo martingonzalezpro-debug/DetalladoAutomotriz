@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mis publicaciones | Dr. Chulo</title>
+
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/bloque3.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="contenedor navegacion">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <span>DR.</span> CHULO
+            </a>
+
+
+            <nav>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html">
+                            Catálogo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="perfil.html"
+                            class="boton-login"
+                        >
+                            Mi cuenta
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="pagina">
+
+            <div class="contenedor">
+
+                <div class="encabezado-publicaciones">
+
+                    <div>
+
+                        <p class="etiqueta">
+                            MI CUENTA
+                        </p>
+
+                        <h1>
+                            Mis publicaciones
+                        </h1>
+
+                        <p>
+                            Consulta y administra los productos
+                            que has publicado.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="publicar.html"
+                        class="boton boton-principal"
+                    >
+                        Nueva publicación
+                    </a>
+
+                </div>
+
+
+                <section
+                    id="formulario-edicion-contenedor"
+                    class="editar-publicacion"
+                >
+
+                    <div class="editar-publicacion-titulo">
+
+                        <h2>
+                            Editar publicación
+                        </h2>
+
+                        <button
+                            type="button"
+                            id="cerrar-edicion"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <form
+                        id="formulario-editar-publicacion"
+                        novalidate
+                    >
+
+                        <input
+                            type="hidden"
+                            id="editar-id"
+                        >
+
+
+                        <div class="publicacion-editar-grid">
+
+                            <div class="campo">
+
+                                <label for="editar-nombre">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editar-nombre"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="editar-precio">
+                                    Precio
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="editar-precio"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="editar-descripcion">
+                                Descripción
+                            </label>
+
+                            <textarea
+                                id="editar-descripcion"
+                                rows="4"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="editar-foto">
+                                Cambiar foto
+                            </label>
+
+                            <input
+                                type="file"
+                                id="editar-foto"
+                            >
+
+                        </div>
+
+
+                        <div class="publicacion-botones">
+
+                            <button
+                                type="submit"
+                                class="boton boton-principal"
+                            >
+                                Guardar cambios
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="cancelar-edicion"
+                                class="boton boton-secundario"
+                            >
+                                Cancelar
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <div
+                    id="lista-publicaciones"
+                    class="mis-publicaciones-grid"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie">
+
+        <div class="contenedor contenido-pie">
+
+            <p>
+                © 2026 Dr. Chulo - Detallado Automotriz
+            </p>
+
+            <p>
+                Detallado automotriz a domicilio · Aguascalientes
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/bloque3.js"></script>
+
+</body>
+
+</html>

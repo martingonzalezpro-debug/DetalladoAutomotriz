@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Comunidad | Dr. Chulo</title>
+
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/bloque3.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="contenedor navegacion">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <span>DR.</span> CHULO
+            </a>
+
+
+            <nav>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html">
+                            Catálogo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="perfil.html"
+                            class="boton-login"
+                        >
+                            Mi cuenta
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="pagina">
+
+            <div class="contenedor">
+
+                <div class="encabezado-pagina">
+
+                    <p class="etiqueta">
+                        COMUNIDAD
+                    </p>
+
+                    <h1>
+                        Opiniones de clientes
+                    </h1>
+
+                    <p>
+                        Comparte tu experiencia y consulta
+                        los comentarios de otros usuarios.
+                    </p>
+
+                </div>
+
+
+                <div class="comunidad-grid">
+
+                    <section class="comunidad-formulario">
+
+                        <p class="bloque3-etiqueta">
+                            TU OPINIÓN
+                        </p>
+
+                        <h2>
+                            Deja un comentario
+                        </h2>
+
+
+                        <form
+                            id="formulario-comentario"
+                            novalidate
+                        >
+
+                            <div class="campo">
+
+                                <label for="nombre-comentario">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombre-comentario"
+                                    placeholder="Tu nombre"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="texto-comentario">
+                                    Comentario
+                                </label>
+
+                                <textarea
+                                    id="texto-comentario"
+                                    rows="5"
+                                    placeholder="Escribe tu comentario"
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="boton boton-principal"
+                            >
+                                Publicar comentario
+                            </button>
+
+
+                            <div
+                                id="mensaje-comentario"
+                                class="mensaje-exito"
+                            >
+                                Comentario publicado correctamente.
+                            </div>
+
+                        </form>
+
+                    </section>
+
+
+                    <section>
+
+                        <div class="comunidad-titulo">
+
+                            <p class="bloque3-etiqueta">
+                                COMENTARIOS
+                            </p>
+
+                            <h2>
+                                Comunidad Dr. Chulo
+                            </h2>
+
+                        </div>
+
+
+                        <div
+                            id="lista-comentarios"
+                            class="lista-comentarios"
+                        >
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie">
+
+        <div class="contenedor contenido-pie">
+
+            <p>
+                © 2026 Dr. Chulo - Detallado Automotriz
+            </p>
+
+            <p>
+                Detallado automotriz a domicilio · Aguascalientes
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/bloque3.js"></script>
+
+</body>
+
+</html>

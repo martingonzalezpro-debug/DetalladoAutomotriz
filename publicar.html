@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Publicar producto | Dr. Chulo</title>
+
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/bloque3.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="contenedor navegacion">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <span>DR.</span> CHULO
+            </a>
+
+
+            <nav>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html">
+                            Catálogo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="perfil.html"
+                            class="boton-login"
+                        >
+                            Mi cuenta
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="pagina">
+
+            <div class="contenedor">
+
+                <div class="encabezado-pagina">
+
+                    <p class="etiqueta">
+                        PUBLICACIÓN
+                    </p>
+
+                    <h1>
+                        Publica tu producto
+                    </h1>
+
+                    <p>
+                        Agrega la información del producto
+                        que quieres publicar.
+                    </p>
+
+                </div>
+
+
+                <div class="publicacion-contenido">
+
+                    <section class="publicacion-formulario">
+
+                        <form
+                            id="formulario-publicacion"
+                            novalidate
+                        >
+
+                            <div class="campo">
+
+                                <label for="nombre-publicacion">
+                                    Nombre del producto
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombre-publicacion"
+                                    placeholder="Nombre del producto"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="precio-publicacion">
+                                    Precio
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="precio-publicacion"
+                                    placeholder="Precio"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="descripcion-publicacion">
+                                    Descripción
+                                </label>
+
+                                <textarea
+                                    id="descripcion-publicacion"
+                                    rows="5"
+                                    placeholder="Descripción del producto"
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="foto-publicacion">
+                                    Foto
+                                </label>
+
+                                <input
+                                    type="file"
+                                    id="foto-publicacion"
+                                >
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="boton boton-principal boton-publicar"
+                            >
+                                Publicar
+                            </button>
+
+
+                            <div
+                                id="mensaje-publicacion"
+                                class="mensaje-exito"
+                            >
+                                Publicación realizada correctamente.
+                            </div>
+
+                        </form>
+
+                    </section>
+
+
+                    <aside class="publicacion-ayuda">
+
+                        <p class="bloque3-etiqueta">
+                            MI CUENTA
+                        </p>
+
+                        <h2>
+                            Tus publicaciones
+                        </h2>
+
+                        <p>
+                            Después de publicar podrás consultar
+                            tus productos desde la sección
+                            Mis publicaciones.
+                        </p>
+
+
+                        <a
+                            href="mis-publicaciones.html"
+                            class="boton boton-secundario"
+                        >
+                            Mis publicaciones
+                        </a>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie">
+
+        <div class="contenedor contenido-pie">
+
+            <p>
+                © 2026 Dr. Chulo - Detallado Automotriz
+            </p>
+
+            <p>
+                Detallado automotriz a domicilio · Aguascalientes
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/bloque3.js"></script>
+
+</body>
+
+</html>

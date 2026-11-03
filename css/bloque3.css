@@ -45,7 +45,6 @@
 }
 
 .promocion-tarjeta {
-    position: relative;
     padding: 32px;
     background-color: #151518;
     border: 1px solid #29292e;
@@ -96,21 +95,18 @@
     letter-spacing: 1.5px;
 }
 
-/* aplicar codigo */
+/* aplicar promocion */
 
 .aplicar-promocion {
     margin-top: 60px;
     padding: 40px;
-    background-color: #151518;
-    border: 1px solid #29292e;
-    border-radius: 12px;
-}
-
-.aplicar-promocion {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: end;
     gap: 35px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 12px;
 }
 
 .aplicar-promocion-texto h2 {
@@ -138,14 +134,9 @@
     outline: none;
 }
 
-.aplicar-promocion-formulario input:focus {
-    border-color: #a21d35;
-}
-
 .mensaje-promocion {
     display: none;
     grid-column: 1 / -1;
-    margin-top: 5px;
     padding: 14px 16px;
     background-color: #17271c;
     border: 1px solid #31563c;
@@ -163,8 +154,8 @@
     margin-top: 30px;
     padding: 40px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 40px;
     background-color: #101012;
     border: 1px solid #29292e;
@@ -205,7 +196,6 @@
 }
 
 .campana-texto h1 {
-    max-width: 720px;
     margin-bottom: 25px;
     font-size: clamp(3rem, 5vw, 5rem);
     line-height: 1;
@@ -213,10 +203,8 @@
 }
 
 .campana-texto > p:not(.bloque3-etiqueta) {
-    max-width: 620px;
     margin-bottom: 35px;
     color: #aaaab0;
-    font-size: 1.02rem;
     line-height: 1.8;
 }
 
@@ -272,8 +260,6 @@
     font-size: 0.78rem;
 }
 
-/* testimonios */
-
 .campana-seccion {
     padding: 100px 0;
     background-color: #131316;
@@ -303,7 +289,6 @@
 .estrellas {
     margin-bottom: 20px;
     color: #c32947;
-    letter-spacing: 3px;
 }
 
 .testimonio p {
@@ -312,12 +297,6 @@
     color: #aaaab0;
     line-height: 1.7;
 }
-
-.testimonio strong {
-    font-size: 0.9rem;
-}
-
-/* llamada final */
 
 .campana-cta {
     padding: 80px 0;
@@ -334,25 +313,349 @@
     border-radius: 12px;
 }
 
-.campana-cta h2 {
-    max-width: 650px;
-    font-size: 2rem;
+/* panel usuario */
+
+.panel-usuario-opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.panel-opcion {
+    padding: 24px;
+    background-color: #101012;
+    border: 1px solid #29292e;
+    border-radius: 9px;
+}
+
+.panel-opcion:hover {
+    border-color: #a21d35;
+}
+
+.panel-opcion span {
+    display: block;
+    margin-bottom: 12px;
+    color: #a21d35;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.panel-opcion h3 {
+    margin-bottom: 9px;
+}
+
+.panel-opcion p {
+    color: #8e8e94;
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+/* comunidad */
+
+.comunidad-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.comunidad-formulario {
+    position: sticky;
+    top: 105px;
+    padding: 30px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 12px;
+}
+
+.comunidad-formulario h2 {
+    margin-bottom: 25px;
+}
+
+.comunidad-titulo {
+    margin-bottom: 25px;
+}
+
+.comunidad-titulo h2 {
+    font-size: 1.8rem;
+}
+
+.lista-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comentario-tarjeta {
+    padding: 25px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.comentario-superior {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.comentario-avatar {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a21d35;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.comentario-superior h3 {
+    margin-bottom: 3px;
+    font-size: 0.95rem;
+}
+
+.comentario-superior span {
+    color: #69696f;
+    font-size: 0.72rem;
+}
+
+.comentario-tarjeta > p {
+    color: #aaaab0;
+    line-height: 1.7;
+}
+
+/* publicar */
+
+.publicacion-contenido {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.publicacion-formulario {
+    padding: 35px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 12px;
+}
+
+.publicacion-formulario input[type="file"],
+.editar-publicacion input[type="file"] {
+    width: 100%;
+    padding: 13px;
+    background-color: #0f0f11;
+    border: 1px solid #333338;
+    border-radius: 8px;
+    color: #99999f;
+}
+
+.boton-publicar {
+    width: 100%;
+    border: none;
+}
+
+.publicacion-ayuda {
+    padding: 35px;
+    background-color: #101012;
+    border: 1px solid #29292e;
+    border-radius: 12px;
+}
+
+.publicacion-ayuda h2 {
+    margin-bottom: 15px;
+}
+
+.publicacion-ayuda > p:not(.bloque3-etiqueta) {
+    margin-bottom: 25px;
+    color: #99999f;
+    line-height: 1.7;
+}
+
+/* mis publicaciones */
+
+.encabezado-publicaciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.encabezado-publicaciones h1 {
+    margin-bottom: 14px;
+    font-size: 3rem;
+}
+
+.encabezado-publicaciones p:not(.etiqueta) {
+    color: #99999f;
+}
+
+.mis-publicaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.publicacion-tarjeta {
+    overflow: hidden;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.publicacion-imagen {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #202024;
+    color: #77777d;
+}
+
+.publicacion-imagen span {
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.publicacion-imagen p {
+    max-width: 80%;
+    overflow: hidden;
+    font-size: 0.78rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.publicacion-info {
+    padding: 25px;
+}
+
+.publicacion-fecha {
+    display: block;
+    margin-bottom: 10px;
+    color: #77777d;
+    font-size: 0.72rem;
+}
+
+.publicacion-info h2 {
+    margin-bottom: 8px;
+}
+
+.publicacion-info h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.publicacion-info > p {
+    min-height: 55px;
+    margin-bottom: 22px;
+    color: #99999f;
+    line-height: 1.6;
+}
+
+.publicacion-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.boton-editar-publicacion,
+.boton-eliminar-publicacion {
+    padding: 9px 13px;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.boton-editar-publicacion {
+    border: 1px solid #47474d;
+    color: #ffffff;
+}
+
+.boton-eliminar-publicacion {
+    border: 1px solid #632839;
+    color: #d76b7f;
+}
+
+.editar-publicacion {
+    display: none;
+    margin-bottom: 35px;
+    padding: 30px;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.editar-publicacion.mostrar {
+    display: block;
+}
+
+.editar-publicacion-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.editar-publicacion-titulo button {
+    border: none;
+    background: none;
+    color: #99999f;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.publicacion-editar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.publicacion-botones {
+    display: flex;
+    gap: 10px;
+}
+
+.publicaciones-vacias {
+    grid-column: 1 / -1;
+    padding: 50px;
+    text-align: center;
+    background-color: #151518;
+    border: 1px solid #29292e;
+    border-radius: 10px;
+}
+
+.publicaciones-vacias h2 {
+    margin-bottom: 10px;
+}
+
+.publicaciones-vacias p {
+    margin-bottom: 25px;
+    color: #99999f;
 }
 
 /* responsive */
 
 @media (max-width: 900px) {
 
-    .promociones-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .campana-hero-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .promociones-grid,
     .testimonios-grid {
         grid-template-columns: 1fr;
+    }
+
+    .campana-hero-grid,
+    .comunidad-grid,
+    .publicacion-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .comunidad-formulario {
+        position: static;
     }
 
 }
@@ -361,12 +664,16 @@
 
     .entrada-promociones-contenido,
     .enlace-campana,
-    .campana-cta-contenido {
+    .campana-cta-contenido,
+    .encabezado-publicaciones {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .aplicar-promocion {
+    .aplicar-promocion,
+    .panel-usuario-opciones,
+    .mis-publicaciones-grid,
+    .publicacion-editar-grid {
         grid-template-columns: 1fr;
     }
 
@@ -374,7 +681,8 @@
         grid-template-columns: 1fr;
     }
 
-    .campana-botones {
+    .campana-botones,
+    .publicacion-botones {
         flex-direction: column;
     }
 
