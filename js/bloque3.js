@@ -168,12 +168,26 @@ function mostrarComentarios() {
                 "comentario-tarjeta";
 
 
+            let inicial =
+                "U";
+
+
+            if (comentario.nombre) {
+
+                inicial =
+                    comentario.nombre
+                        .charAt(0)
+                        .toUpperCase();
+
+            }
+
+
             tarjeta.innerHTML = `
 
                 <div class="comentario-superior">
 
                     <div class="comentario-avatar">
-                        ${comentario.nombre.charAt(0).toUpperCase()}
+                        ${inicial}
                     </div>
 
                     <div>
@@ -308,7 +322,7 @@ mostrarComentarios();
 
 
 
-/* publicaciones C2C */
+/* publicaciones */
 
 function obtenerPublicaciones() {
 
@@ -907,3 +921,367 @@ if (botonCancelarEdicion) {
     );
 
 }
+
+
+
+/* subasta */
+
+const ofertasIniciales = [
+
+    {
+        id: 1,
+        usuario: "Carlos",
+        cantidad: "1800",
+        hora: "10:35 p. m."
+    },
+
+    {
+        id: 2,
+        usuario: "Andrea",
+        cantidad: "1700",
+        hora: "10:20 p. m."
+    },
+
+    {
+        id: 3,
+        usuario: "Miguel",
+        cantidad: "1600",
+        hora: "10:05 p. m."
+    }
+
+];
+
+
+
+function obtenerOfertas() {
+
+    let ofertas =
+        JSON.parse(
+            localStorage.getItem(
+                "ofertasSubasta"
+            )
+        );
+
+
+    if (!ofertas) {
+
+        ofertas =
+            ofertasIniciales;
+
+
+        localStorage.setItem(
+            "ofertasSubasta",
+            JSON.stringify(ofertas)
+        );
+
+    }
+
+
+    return ofertas;
+
+}
+
+
+
+function guardarOfertas(
+    ofertas
+) {
+
+    localStorage.setItem(
+        "ofertasSubasta",
+        JSON.stringify(ofertas)
+    );
+
+}
+
+
+
+function mostrarOfertas() {
+
+    const lista =
+        document.getElementById(
+            "lista-ofertas"
+        );
+
+
+    if (!lista) {
+
+        return;
+
+    }
+
+
+    const ofertas =
+        obtenerOfertas();
+
+
+    lista.innerHTML =
+        "";
+
+
+    ofertas.forEach(
+        function(oferta, indice) {
+
+            const elemento =
+                document.createElement(
+                    "article"
+                );
+
+
+            elemento.className =
+                "oferta-item";
+
+
+            let posicion =
+                "Oferta";
+
+
+            if (indice === 0) {
+
+                posicion =
+                    "Más reciente";
+
+            }
+
+
+            elemento.innerHTML = `
+
+                <div class="oferta-usuario">
+
+                    <h3>
+                        ${oferta.usuario}
+                    </h3>
+
+                    <span>
+                        ${oferta.hora}
+                    </span>
+
+                </div>
+
+
+                <div class="oferta-cantidad">
+
+                    $${oferta.cantidad}
+
+                </div>
+
+
+                <div class="oferta-posicion">
+
+                    ${posicion}
+
+                </div>
+
+            `;
+
+
+            lista.appendChild(
+                elemento
+            );
+
+        }
+    );
+
+
+    const ofertaActual =
+        document.getElementById(
+            "oferta-actual"
+        );
+
+
+    if (
+        ofertaActual &&
+        ofertas.length > 0
+    ) {
+
+        ofertaActual.textContent =
+            "$" +
+            ofertas[0].cantidad;
+
+    }
+
+}
+
+
+
+const formularioOferta =
+    document.getElementById(
+        "formulario-oferta"
+    );
+
+
+if (formularioOferta) {
+
+    formularioOferta.addEventListener(
+        "submit",
+        function(evento) {
+
+            evento.preventDefault();
+
+
+            const cantidad =
+                document.getElementById(
+                    "cantidad-oferta"
+                ).value;
+
+
+            const ofertas =
+                obtenerOfertas();
+
+
+            ofertas.unshift({
+
+                id:
+                    Date.now(),
+
+                usuario:
+                    "Usuario",
+
+                cantidad:
+                    cantidad,
+
+                hora:
+                    new Date()
+                        .toLocaleTimeString(
+                            "es-MX",
+                            {
+                                hour:
+                                    "2-digit",
+
+                                minute:
+                                    "2-digit"
+                            }
+                        )
+
+            });
+
+
+            guardarOfertas(
+                ofertas
+            );
+
+
+            mostrarOfertas();
+
+
+            formularioOferta.reset();
+
+
+            const mensaje =
+                document.getElementById(
+                    "mensaje-oferta"
+                );
+
+
+            mensaje.classList.add(
+                "mostrar"
+            );
+
+
+            setTimeout(
+                function() {
+
+                    mensaje.classList.remove(
+                        "mostrar"
+                    );
+
+                },
+                3000
+            );
+
+        }
+    );
+
+}
+
+
+mostrarOfertas();
+
+
+
+/* temporizador */
+
+function iniciarTemporizadorSubasta() {
+
+    const contador =
+        document.getElementById(
+            "contador-subasta"
+        );
+
+
+    if (!contador) {
+
+        return;
+
+    }
+
+
+    let segundos =
+        7199;
+
+
+    function actualizarTemporizador() {
+
+        const horas =
+            Math.floor(
+                segundos / 3600
+            );
+
+
+        const minutos =
+            Math.floor(
+                (segundos % 3600) /
+                60
+            );
+
+
+        const segundosRestantes =
+            segundos % 60;
+
+
+        contador.textContent =
+
+            String(horas)
+                .padStart(
+                    2,
+                    "0"
+                ) +
+
+            ":" +
+
+            String(minutos)
+                .padStart(
+                    2,
+                    "0"
+                ) +
+
+            ":" +
+
+            String(segundosRestantes)
+                .padStart(
+                    2,
+                    "0"
+                );
+
+
+        if (segundos > 0) {
+
+            segundos--;
+
+        }
+
+    }
+
+
+    actualizarTemporizador();
+
+
+    setInterval(
+        actualizarTemporizador,
+        1000
+    );
+
+}
+
+
+iniciarTemporizadorSubasta();

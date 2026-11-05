@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Subasta | Dr. Chulo</title>
+
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/bloque3.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/subasta.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="contenedor navegacion">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <span>DR.</span> CHULO
+            </a>
+
+
+            <nav>
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="catalogo.html">
+                            Catálogo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="perfil.html"
+                            class="boton-login"
+                        >
+                            Mi cuenta
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="pagina">
+
+            <div class="contenedor">
+
+                <div class="encabezado-pagina">
+
+                    <p class="etiqueta">
+                        SUBASTA
+                    </p>
+
+                    <h1>
+                        Producto en subasta
+                    </h1>
+
+                    <p>
+                        Consulta el producto disponible
+                        y realiza tu oferta.
+                    </p>
+
+                </div>
+
+
+                <div class="subasta-grid">
+
+                    <section class="subasta-producto">
+
+                        <div class="subasta-imagen">
+
+                            <span>
+                                IMAGEN DEL PRODUCTO
+                            </span>
+
+                        </div>
+
+
+                        <div class="subasta-producto-info">
+
+                            <div class="subasta-estado">
+                                SUBASTA ACTIVA
+                            </div>
+
+
+                            <h2>
+                                Pulidora orbital 15 mm
+                            </h2>
+
+
+                            <p>
+                                Pulidora orbital usada en buenas
+                                condiciones, ideal para trabajos
+                                de corrección y abrillantado.
+                            </p>
+
+
+                            <div class="subasta-datos">
+
+                                <div>
+
+                                    <span>
+                                        Oferta actual
+                                    </span>
+
+                                    <strong id="oferta-actual">
+                                        $1,800
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Tiempo restante
+                                    </span>
+
+                                    <strong id="contador-subasta">
+                                        01:59:59
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <aside class="subasta-ofertar">
+
+                        <p class="bloque3-etiqueta">
+                            PARTICIPAR
+                        </p>
+
+                        <h2>
+                            Realiza una oferta
+                        </h2>
+
+                        <p>
+                            Ingresa la cantidad que deseas
+                            ofrecer por el producto.
+                        </p>
+
+
+                        <form
+                            id="formulario-oferta"
+                            novalidate
+                        >
+
+                            <div class="campo">
+
+                                <label for="cantidad-oferta">
+                                    Tu oferta
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="cantidad-oferta"
+                                    placeholder="Ej. 2000"
+                                >
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="boton boton-principal boton-ofertar"
+                            >
+                                Ofertar
+                            </button>
+
+
+                            <div
+                                id="mensaje-oferta"
+                                class="mensaje-exito"
+                            >
+                                Oferta registrada correctamente.
+                            </div>
+
+                        </form>
+
+
+                        <a
+                            href="perfil.html"
+                            class="regresar-panel"
+                        >
+                            Volver a mi cuenta
+                        </a>
+
+                    </aside>
+
+                </div>
+
+
+                <section class="historial-ofertas">
+
+                    <div class="historial-ofertas-titulo">
+
+                        <p class="bloque3-etiqueta">
+                            ACTIVIDAD
+                        </p>
+
+                        <h2>
+                            Ofertas registradas
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        id="lista-ofertas"
+                        class="lista-ofertas"
+                    >
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie">
+
+        <div class="contenedor contenido-pie">
+
+            <p>
+                © 2026 Dr. Chulo - Detallado Automotriz
+            </p>
+
+            <p>
+                Detallado automotriz a domicilio · Aguascalientes
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/bloque3.js"></script>
+
+</body>
+
+</html>
