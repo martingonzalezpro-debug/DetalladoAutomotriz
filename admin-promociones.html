@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Promociones | Administración Dr. Chulo</title>
+
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin-panel.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-logo">
+                <span>DR.</span> CHULO
+            </div>
+
+
+            <nav class="admin-menu">
+
+                <a href="admin.html">
+                    Inicio
+                </a>
+
+                <a href="admin-productos.html">
+                    Productos
+                </a>
+
+                <a href="admin-pedidos.html">
+                    Pedidos
+                </a>
+
+                <a
+                    href="admin-promociones.html"
+                    class="activo"
+                >
+                    Promociones y cupones
+                </a>
+
+            </nav>
+
+
+            <a
+                href="index.html"
+                class="admin-salir"
+            >
+                Cerrar administración
+            </a>
+
+        </aside>
+
+
+        <main class="admin-main">
+
+            <div class="admin-encabezado">
+
+                <div>
+
+                    <p class="etiqueta">
+                        ADMINISTRACIÓN
+                    </p>
+
+                    <h1>
+                        Promociones y cupones
+                    </h1>
+
+                    <p>
+                        Modifica descuentos, códigos
+                        y promociones disponibles.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="admin-nueva-promocion"
+                    class="boton boton-principal"
+                >
+                    Agregar promoción
+                </button>
+
+            </div>
+
+
+            <section
+                id="admin-formulario-promocion"
+                class="admin-formulario"
+            >
+
+                <h2 id="admin-titulo-promocion">
+                    Agregar promoción
+                </h2>
+
+
+                <form
+                    id="admin-promocion-form"
+                    novalidate
+                >
+
+                    <input
+                        type="hidden"
+                        id="admin-promocion-id"
+                    >
+
+
+                    <div class="admin-formulario-grid">
+
+                        <div class="campo">
+
+                            <label for="admin-promocion-nombre">
+                                Nombre
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-promocion-nombre"
+                                placeholder="Nombre de la promoción"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-promocion-codigo">
+                                Código del cupón
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-promocion-codigo"
+                                placeholder="Ej. CHULO10"
+                            >
+
+                        </div>
+
+
+                        <div class="campo campo-completo">
+
+                            <label for="admin-promocion-descripcion">
+                                Descripción
+                            </label>
+
+                            <textarea
+                                id="admin-promocion-descripcion"
+                                rows="3"
+                                placeholder="Descripción"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-promocion-tipo">
+                                Tipo de descuento
+                            </label>
+
+                            <select id="admin-promocion-tipo">
+
+                                <option value="porcentaje">
+                                    Porcentaje
+                                </option>
+
+                                <option value="fijo">
+                                    Cantidad fija
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-promocion-valor">
+                                Valor
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-promocion-valor"
+                                placeholder="Ej. 10"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-promocion-aplica">
+                                Aplica a
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-promocion-aplica"
+                                placeholder="todos, interior, faros..."
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-promocion-estado">
+                                Estado
+                            </label>
+
+                            <select id="admin-promocion-estado">
+
+                                <option value="true">
+                                    Activa
+                                </option>
+
+                                <option value="false">
+                                    Inactiva
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-formulario-botones">
+
+                        <button
+                            type="submit"
+                            class="boton boton-principal"
+                        >
+                            Guardar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="admin-cancelar-promocion"
+                            class="boton boton-secundario"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <section class="admin-seccion">
+
+                <div class="admin-seccion-cabecera">
+
+                    <div>
+
+                        <p class="etiqueta">
+                            PROMOCIONES
+                        </p>
+
+                        <h2>
+                            Promociones disponibles
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-tabla-responsive">
+
+                    <table class="admin-tabla">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Promoción
+                                </th>
+
+                                <th>
+                                    Cupón
+                                </th>
+
+                                <th>
+                                    Descuento
+                                </th>
+
+                                <th>
+                                    Aplica a
+                                </th>
+
+                                <th>
+                                    Estado
+                                </th>
+
+                                <th>
+                                    Acciones
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="admin-tabla-promociones">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/admin-panel.js"></script>
+
+</body>
+
+</html>

@@ -17,6 +17,11 @@
         href="css/estilos.css"
     >
 
+    <link
+        rel="stylesheet"
+        href="css/bloque4.css"
+    >
+
 </head>
 
 <body>
@@ -31,7 +36,6 @@
             >
                 <span>DR.</span> CHULO
             </a>
-
 
             <nav>
 
@@ -92,24 +96,24 @@
                     </p>
 
                     <h1>
-                        Tu carrito
+                        Servicios seleccionados
                     </h1>
 
                     <p>
-                        Revisa los servicios seleccionados
-                        para tu vehículo antes de continuar.
+                        Revisa los servicios antes de continuar
+                        con el pago.
                     </p>
 
                 </div>
 
 
-                <div class="carrito-contenido">
+                <div class="carrito-layout">
 
-                    <div
+                    <section
                         id="lista-carrito"
                         class="lista-carrito"
                     >
-                    </div>
+                    </section>
 
 
                     <aside class="resumen-carrito">
@@ -125,9 +129,9 @@
                                 Servicios
                             </span>
 
-                            <span id="resumen-cantidad">
+                            <strong id="resumen-cantidad">
                                 0
-                            </span>
+                            </strong>
 
                         </div>
 
@@ -138,9 +142,9 @@
                                 Total
                             </span>
 
-                            <span id="total-carrito">
+                            <strong id="total-carrito">
                                 $0
-                            </span>
+                            </strong>
 
                         </div>
 
@@ -148,17 +152,9 @@
                         <a
                             href="checkout.html"
                             id="boton-pagar"
-                            class="boton boton-principal boton-pagar"
+                            class="boton boton-principal"
                         >
-                            Continuar
-                        </a>
-
-
-                        <a
-                            href="catalogo.html"
-                            class="seguir-comprando"
-                        >
-                            Seguir viendo servicios
+                            Ir a pagar
                         </a>
 
                     </aside>
@@ -190,6 +186,7 @@
 
 
     <script src="js/app.js"></script>
+    <script src="js/descuentos.js"></script>
 
 </body>
 

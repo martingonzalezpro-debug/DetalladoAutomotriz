@@ -10,111 +10,301 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Pedidos | Dr. Chulo</title>
+    <title>Pedidos | Administración Dr. Chulo</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin-panel.css"
+    >
 
 </head>
 
-<body class="admin-body">
+<body>
 
     <div class="admin-layout">
 
         <aside class="admin-sidebar">
 
-            <a href="index.html" class="admin-logo">
+            <div class="admin-logo">
                 <span>DR.</span> CHULO
-            </a>
-
-            <p class="admin-titulo-menu">
-                ADMINISTRACIÓN
-            </p>
+            </div>
 
 
             <nav class="admin-menu">
 
-                <a
-                    href="admin.html"
-                    class="admin-enlace"
-                >
+                <a href="admin.html">
                     Inicio
                 </a>
 
-                <a
-                    href="admin-productos.html"
-                    class="admin-enlace"
-                >
+                <a href="admin-productos.html">
                     Productos
                 </a>
 
                 <a
                     href="admin-pedidos.html"
-                    class="admin-enlace activo"
+                    class="activo"
                 >
                     Pedidos
                 </a>
 
-                <a
-                    href="admin.html#promociones"
-                    class="admin-enlace"
-                >
-                    Promociones
+                <a href="admin-promociones.html">
+                    Promociones y cupones
                 </a>
 
             </nav>
 
 
-            <div class="admin-sidebar-abajo">
-
-                <a
-                    href="perfil.html"
-                    class="admin-volver"
-                >
-                    Volver al perfil
-                </a>
-
-            </div>
+            <a
+                href="index.html"
+                class="admin-salir"
+            >
+                Cerrar administración
+            </a>
 
         </aside>
 
 
-        <main class="admin-principal">
+        <main class="admin-main">
 
-            <header class="admin-encabezado">
+            <div class="admin-encabezado">
 
                 <div>
 
-                    <p class="admin-subtitulo">
-                        PEDIDOS
+                    <p class="etiqueta">
+                        ADMINISTRACIÓN
                     </p>
 
                     <h1>
-                        Todos los pedidos
+                        Gestión de pedidos
                     </h1>
 
+                    <p>
+                        Consulta y modifica los pedidos registrados.
+                    </p>
+
                 </div>
 
 
-                <div class="admin-usuario">
-                    5 pedidos
-                </div>
+                <button
+                    type="button"
+                    id="admin-nuevo-pedido"
+                    class="boton boton-principal"
+                >
+                    Agregar pedido
+                </button>
 
-            </header>
+            </div>
+
+
+            <section
+                id="admin-formulario-pedido"
+                class="admin-formulario"
+            >
+
+                <h2 id="admin-titulo-pedido">
+                    Agregar pedido
+                </h2>
+
+
+                <form
+                    id="admin-pedido-form"
+                    novalidate
+                >
+
+                    <input
+                        type="hidden"
+                        id="admin-pedido-id"
+                    >
+
+
+                    <div class="admin-formulario-grid">
+
+                        <div class="campo">
+
+                            <label for="admin-pedido-cliente">
+                                Cliente
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-pedido-cliente"
+                                placeholder="Nombre del cliente"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-pedido-telefono">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-pedido-telefono"
+                                placeholder="Teléfono"
+                            >
+
+                        </div>
+
+
+                        <div class="campo campo-completo">
+
+                            <label for="admin-pedido-servicios">
+                                Servicios
+                            </label>
+
+                            <textarea
+                                id="admin-pedido-servicios"
+                                rows="3"
+                                placeholder="Servicios del pedido"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-pedido-total">
+                                Total
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-pedido-total"
+                                placeholder="Total"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-pedido-pago">
+                                Método de pago
+                            </label>
+
+                            <select id="admin-pedido-pago">
+
+                                <option value="Tarjeta">
+                                    Tarjeta
+                                </option>
+
+                                <option value="Transferencia bancaria">
+                                    Transferencia bancaria
+                                </option>
+
+                                <option value="E-wallet">
+                                    E-wallet
+                                </option>
+
+                                <option value="Efectivo">
+                                    Efectivo
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-pedido-estado">
+                                Estado
+                            </label>
+
+                            <select id="admin-pedido-estado">
+
+                                <option value="Pendiente">
+                                    Pendiente
+                                </option>
+
+                                <option value="Pago aprobado">
+                                    Pago aprobado
+                                </option>
+
+                                <option value="En proceso">
+                                    En proceso
+                                </option>
+
+                                <option value="Terminado">
+                                    Terminado
+                                </option>
+
+                                <option value="Cancelado">
+                                    Cancelado
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="admin-pedido-fecha">
+                                Fecha
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-pedido-fecha"
+                                placeholder="Fecha"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-formulario-botones">
+
+                        <button
+                            type="submit"
+                            class="boton boton-principal"
+                        >
+                            Guardar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="admin-cancelar-pedido"
+                            class="boton boton-secundario"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
 
 
             <section class="admin-seccion">
 
-                <div class="admin-seccion-encabezado">
+                <div class="admin-seccion-cabecera">
 
                     <div>
 
-                        <p class="admin-subtitulo">
-                            REGISTRO
+                        <p class="etiqueta">
+                            PEDIDOS
                         </p>
 
                         <h2>
-                            Lista de pedidos
+                            Todos los pedidos
                         </h2>
 
                     </div>
@@ -122,7 +312,7 @@
                 </div>
 
 
-                <div class="admin-tabla-contenedor">
+                <div class="admin-tabla-responsive">
 
                     <table class="admin-tabla">
 
@@ -139,7 +329,7 @@
                                 </th>
 
                                 <th>
-                                    Servicio
+                                    Servicios
                                 </th>
 
                                 <th>
@@ -147,7 +337,15 @@
                                 </th>
 
                                 <th>
+                                    Pago
+                                </th>
+
+                                <th>
                                     Estado
+                                </th>
+
+                                <th>
+                                    Acciones
                                 </th>
 
                             </tr>
@@ -155,167 +353,10 @@
                         </thead>
 
 
-                        <tbody>
-
-                            <tr>
-
-                                <td>
-                                    #0015
-                                </td>
-
-                                <td>
-                                    Carlos
-                                </td>
-
-                                <td>
-                                    Paquete Clásico
-                                </td>
-
-                                <td>
-                                    $250
-                                </td>
-
-                                <td>
-
-                                    <span class="estado pendiente">
-                                        Pendiente
-                                    </span>
-
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    #0014
-                                </td>
-
-                                <td>
-                                    Gustavo
-                                </td>
-
-                                <td>
-                                    Interior Completo
-                                </td>
-
-                                <td>
-                                    $1,200
-                                </td>
-
-                                <td>
-
-                                    <span class="estado proceso">
-                                        En proceso
-                                    </span>
-
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    #0013
-                                </td>
-
-                                <td>
-                                    Jordi
-                                </td>
-
-                                <td>
-                                    Restauración de faros
-                                </td>
-
-                                <td>
-                                    $450
-                                </td>
-
-                                <td>
-
-                                    <span class="estado terminado">
-                                        Terminado
-                                    </span>
-
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    #0012
-                                </td>
-
-                                <td>
-                                    Andrea
-                                </td>
-
-                                <td>
-                                    Descontaminación de vidrios
-                                </td>
-
-                                <td>
-                                    $350
-                                </td>
-
-                                <td>
-
-                                    <span class="estado terminado">
-                                        Terminado
-                                    </span>
-
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    #0011
-                                </td>
-
-                                <td>
-                                    Miguel
-                                </td>
-
-                                <td>
-                                    Nano Ceramic
-                                </td>
-
-                                <td>
-                                    $3,300
-                                </td>
-
-                                <td>
-
-                                    <span class="estado terminado">
-                                        Terminado
-                                    </span>
-
-                                </td>
-
-                            </tr>
-
+                        <tbody id="admin-tabla-pedidos">
                         </tbody>
 
                     </table>
-
-                </div>
-
-
-                <div style="margin-top: 25px;">
-
-                    <a
-                        href="admin.html"
-                        class="admin-boton-secundario"
-                    >
-                        Volver al panel
-                    </a>
 
                 </div>
 
@@ -324,6 +365,9 @@
         </main>
 
     </div>
+
+
+    <script src="js/admin-panel.js"></script>
 
 </body>
 

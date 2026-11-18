@@ -97,100 +97,21 @@
                     </p>
 
                     <h1>
-                        Beneficios disponibles
+                        Promociones disponibles
                     </h1>
 
                     <p>
-                        Aprovecha promociones especiales
-                        en servicios seleccionados de
-                        detallado automotriz.
+                        Aprovecha nuestros descuentos
+                        disponibles.
                     </p>
 
                 </div>
 
 
-                <div class="promociones-grid">
-
-                    <article class="promocion-tarjeta">
-
-                        <span class="promocion-descuento">
-                            10% OFF
-                        </span>
-
-                        <p class="promocion-tipo">
-                            PROTECCIÓN EXTERIOR
-                        </p>
-
-                        <h2>
-                            10% en servicios de protección
-                        </h2>
-
-                        <p>
-                            Obtén un beneficio especial
-                            en servicios seleccionados
-                            de protección exterior.
-                        </p>
-
-                        <div class="promocion-codigo">
-                            CHULO10
-                        </div>
-
-                    </article>
-
-
-                    <article class="promocion-tarjeta">
-
-                        <span class="promocion-descuento">
-                            15% OFF
-                        </span>
-
-                        <p class="promocion-tipo">
-                            INTERIOR
-                        </p>
-
-                        <h2>
-                            15% en Interior Completo
-                        </h2>
-
-                        <p>
-                            Una opción para realizar una
-                            limpieza profunda del interior
-                            de tu vehículo.
-                        </p>
-
-                        <div class="promocion-codigo">
-                            INTERIOR15
-                        </div>
-
-                    </article>
-
-
-                    <article class="promocion-tarjeta">
-
-                        <span class="promocion-descuento">
-                            $50 OFF
-                        </span>
-
-                        <p class="promocion-tipo">
-                            RESTAURACIÓN
-                        </p>
-
-                        <h2>
-                            Beneficio en restauración de faros
-                        </h2>
-
-                        <p>
-                            Recupera la apariencia de tus
-                            faros con un beneficio especial
-                            en el servicio.
-                        </p>
-
-                        <div class="promocion-codigo">
-                            FAROS50
-                        </div>
-
-                    </article>
-
+                <div
+                    id="promociones-dinamicas"
+                    class="promociones-grid"
+                >
                 </div>
 
 
@@ -199,46 +120,56 @@
                     <div class="aplicar-promocion-texto">
 
                         <p class="bloque3-etiqueta">
-                            CÓDIGO PROMOCIONAL
+                            CUPÓN
                         </p>
 
                         <h2>
-                            ¿Tienes un código?
+                            Aplica tu código
                         </h2>
 
                         <p>
-                            Ingresa tu código para aplicarlo
-                            a tu compra.
+                            Ingresa uno de los códigos
+                            disponibles.
                         </p>
 
                     </div>
 
 
-                    <div class="aplicar-promocion-formulario">
+                    <div>
 
-                        <input
-                            type="text"
-                            id="codigo-promocion"
-                            value="CHULO10"
-                            placeholder="Código promocional"
+                        <div
+                            class="aplicar-promocion-formulario"
                         >
 
-                        <button
-                            type="button"
-                            id="aplicar-promocion"
-                            class="boton boton-principal"
+                            <input
+                                type="text"
+                                id="codigo-promocion"
+                                placeholder="Código"
+                            >
+
+                            <button
+                                type="button"
+                                id="aplicar-promocion"
+                                class="boton boton-principal"
+                            >
+                                Aplicar
+                            </button>
+
+
+                            <div
+                                id="mensaje-promocion"
+                                class="mensaje-promocion"
+                            >
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="estado-cupon-aplicado"
                         >
-                            Aplicar
-                        </button>
+                        </div>
 
-                    </div>
-
-
-                    <div
-                        id="mensaje-promocion"
-                        class="mensaje-promocion"
-                    >
-                        Código aplicado correctamente.
                     </div>
 
                 </section>
@@ -253,13 +184,12 @@
                         </p>
 
                         <h2>
-                            Conoce nuestra campaña de protección
+                            Conoce nuestra campaña
                         </h2>
 
                         <p>
-                            Descubre una opción de protección
-                            para mantener el acabado exterior
-                            de tu vehículo.
+                            Descubre uno de nuestros servicios
+                            destacados.
                         </p>
 
                     </div>
@@ -299,7 +229,7 @@
 
 
     <script src="js/app.js"></script>
-    <script src="js/bloque3.js"></script>
+    <script src="js/promociones.js"></script>
 
 </body>
 

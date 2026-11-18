@@ -10,11 +10,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Resumen de compra | Dr. Chulo</title>
+    <title>Checkout | Dr. Chulo</title>
 
     <link
         rel="stylesheet"
         href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/bloque4.css"
     >
 
 </head>
@@ -50,23 +55,8 @@
                     </li>
 
                     <li>
-                        <a href="nosotros.html">
-                            Nosotros
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="contacto.html">
-                            Contacto
-                        </a>
-                    </li>
-
-                    <li>
-                        <a
-                            href="login.html"
-                            class="boton-login"
-                        >
-                            Iniciar sesión
+                        <a href="perfil.html">
+                            Mi cuenta
                         </a>
                     </li>
 
@@ -88,57 +78,433 @@
                 <div class="encabezado-pagina">
 
                     <p class="etiqueta">
-                        RESUMEN
+                        CHECKOUT
                     </p>
 
                     <h1>
-                        Resumen de compra
+                        Finalizar compra
                     </h1>
 
                     <p>
-                        Revisa los servicios seleccionados
-                        para tu vehículo.
+                        Completa los pasos para finalizar
+                        tu pedido.
                     </p>
 
                 </div>
 
 
-                <div class="checkout-contenido">
+                <div class="checkout-pasos">
 
-                    <div class="checkout-tarjeta">
+                    <div
+                        class="checkout-paso activo"
+                        data-paso="1"
+                    >
+                        <span>1</span>
+                        Dirección
+                    </div>
 
-                        <h2>
-                            Servicios seleccionados
-                        </h2>
+                    <div
+                        class="checkout-paso"
+                        data-paso="2"
+                    >
+                        <span>2</span>
+                        Pago
+                    </div>
 
-
-                        <div id="checkout-productos">
-                        </div>
-
-
-                        <div class="checkout-total">
-
-                            <span>
-                                Total
-                            </span>
-
-                            <strong id="checkout-total">
-                                $0
-                            </strong>
-
-                        </div>
-
-
-                        <a
-                            href="carrito.html"
-                            class="boton boton-secundario"
-                        >
-                            Regresar al carrito
-                        </a>
-
+                    <div
+                        class="checkout-paso"
+                        data-paso="3"
+                    >
+                        <span>3</span>
+                        Confirmación
                     </div>
 
                 </div>
+
+
+                <div id="checkout-vacio">
+                </div>
+
+
+                <section
+                    id="paso-direccion"
+                    class="checkout-contenido activo"
+                >
+
+                    <h2>
+                        Dirección y datos del cliente
+                    </h2>
+
+
+                    <form
+                        id="formulario-direccion"
+                        novalidate
+                    >
+
+                        <div class="checkout-campos">
+
+                            <div class="campo">
+
+                                <label for="checkout-nombre">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkout-nombre"
+                                    placeholder="Nombre"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="checkout-telefono">
+                                    Teléfono
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkout-telefono"
+                                    placeholder="Teléfono"
+                                >
+
+                            </div>
+
+
+                            <div class="campo campo-completo">
+
+                                <label for="checkout-direccion">
+                                    Dirección
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkout-direccion"
+                                    placeholder="Calle, número y colonia"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="checkout-ciudad">
+                                    Ciudad
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkout-ciudad"
+                                    value="Aguascalientes"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="checkout-referencia">
+                                    Referencia
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkout-referencia"
+                                    placeholder="Referencia del domicilio"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="checkout-acciones">
+
+                            <a
+                                href="carrito.html"
+                                class="boton boton-secundario"
+                            >
+                                Regresar al carrito
+                            </a>
+
+                            <button
+                                type="button"
+                                id="continuar-direccion"
+                                class="boton boton-principal"
+                            >
+                                Continuar
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <section
+                    id="paso-pago"
+                    class="checkout-contenido"
+                >
+
+                    <h2>
+                        Método de pago
+                    </h2>
+
+
+                    <div class="metodos-pago">
+
+                        <label class="metodo-pago">
+
+                            <input
+                                type="radio"
+                                name="metodo-pago"
+                                value="tarjeta"
+                                checked
+                            >
+
+                            <span>
+                                Tarjeta
+                            </span>
+
+                            <small>
+                                Crédito o débito
+                            </small>
+
+                        </label>
+
+
+                        <label class="metodo-pago">
+
+                            <input
+                                type="radio"
+                                name="metodo-pago"
+                                value="transferencia"
+                            >
+
+                            <span>
+                                Transferencia
+                            </span>
+
+                            <small>
+                                Transferencia bancaria
+                            </small>
+
+                        </label>
+
+
+                        <label class="metodo-pago">
+
+                            <input
+                                type="radio"
+                                name="metodo-pago"
+                                value="wallet"
+                            >
+
+                            <span>
+                                E-wallet
+                            </span>
+
+                            <small>
+                                Saldo digital
+                            </small>
+
+                        </label>
+
+                    </div>
+
+
+                    <div
+                        id="pago-tarjeta"
+                        class="detalle-metodo activo"
+                    >
+
+                        <h3>
+                            Datos de tarjeta
+                        </h3>
+
+
+                        <div class="checkout-campos">
+
+                            <div class="campo campo-completo">
+
+                                <label for="tarjeta-nombre">
+                                    Nombre en la tarjeta
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="tarjeta-nombre"
+                                    placeholder="Nombre"
+                                >
+
+                            </div>
+
+
+                            <div class="campo campo-completo">
+
+                                <label for="tarjeta-numero">
+                                    Número de tarjeta
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="tarjeta-numero"
+                                    placeholder="0000 0000 0000 0000"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="tarjeta-fecha">
+                                    Fecha
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="tarjeta-fecha"
+                                    placeholder="MM/AA"
+                                >
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="tarjeta-cvv">
+                                    CVV
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="tarjeta-cvv"
+                                    placeholder="000"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="pago-transferencia"
+                        class="detalle-metodo"
+                    >
+
+                        <h3>
+                            Transferencia bancaria
+                        </h3>
+
+                        <p>
+                            Banco: Banco Ejemplo
+                        </p>
+
+                        <p>
+                            Beneficiario: Dr. Chulo
+                        </p>
+
+                        <p>
+                            CLABE: 012345678901234567
+                        </p>
+
+                        <p>
+                            Concepto: Número de pedido
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        id="pago-wallet"
+                        class="detalle-metodo"
+                    >
+
+                        <h3>
+                            E-wallet
+                        </h3>
+
+                        <p>
+                            Saldo disponible:
+                            <strong>
+                                $10,000
+                            </strong>
+                        </p>
+
+                        <p>
+                            El pago será descontado del saldo
+                            digital de manera simulada.
+                        </p>
+
+                    </div>
+
+
+                    <div class="checkout-acciones">
+
+                        <button
+                            type="button"
+                            id="volver-direccion"
+                            class="boton boton-secundario"
+                        >
+                            Regresar
+                        </button>
+
+                        <button
+                            type="button"
+                            id="continuar-pago"
+                            class="boton boton-principal"
+                        >
+                            Revisar pedido
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <section
+                    id="paso-confirmacion"
+                    class="checkout-contenido"
+                >
+
+                    <h2>
+                        Confirmar pedido
+                    </h2>
+
+
+                    <div
+                        id="resumen-confirmacion"
+                        class="resumen-confirmacion"
+                    >
+                    </div>
+
+
+                    <div class="checkout-acciones">
+
+                        <button
+                            type="button"
+                            id="volver-pago"
+                            class="boton boton-secundario"
+                        >
+                            Regresar
+                        </button>
+
+                        <button
+                            type="button"
+                            id="pagar-compra"
+                            class="boton boton-principal"
+                        >
+                            Pagar
+                        </button>
+
+                    </div>
+
+                </section>
 
             </div>
 
@@ -165,6 +531,8 @@
 
 
     <script src="js/app.js"></script>
+    <script src="js/descuentos.js"></script>
+    <script src="js/bloque4.js"></script>
 
 </body>
 

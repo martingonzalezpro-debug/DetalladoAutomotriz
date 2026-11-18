@@ -10,146 +10,144 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Panel administrativo | Dr. Chulo</title>
+    <title>Administración | Dr. Chulo</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link
+        rel="stylesheet"
+        href="css/estilos.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin-panel.css"
+    >
 
 </head>
 
-<body class="admin-body">
+<body>
 
     <div class="admin-layout">
 
         <aside class="admin-sidebar">
 
-            <a href="index.html" class="admin-logo">
+            <div class="admin-logo">
                 <span>DR.</span> CHULO
-            </a>
+            </div>
 
-            <p class="admin-titulo-menu">
-                ADMINISTRACIÓN
-            </p>
 
             <nav class="admin-menu">
 
                 <a
                     href="admin.html"
-                    class="admin-enlace activo"
+                    class="activo"
                 >
                     Inicio
                 </a>
 
-                <a
-                    href="admin-productos.html"
-                    class="admin-enlace"
-                >
+                <a href="admin-productos.html">
                     Productos
                 </a>
 
-                <a
-                    href="admin-pedidos.html"
-                    class="admin-enlace"
-                >
+                <a href="admin-pedidos.html">
                     Pedidos
                 </a>
 
-                <a
-                    href="#promociones"
-                    class="admin-enlace"
-                >
-                    Promociones
+                <a href="admin-promociones.html">
+                    Promociones y cupones
                 </a>
 
             </nav>
 
 
-            <div class="admin-sidebar-abajo">
-
-                <a
-                    href="perfil.html"
-                    class="admin-volver"
-                >
-                    Volver al perfil
-                </a>
-
-            </div>
+            <a
+                href="index.html"
+                class="admin-salir"
+            >
+                Cerrar administración
+            </a>
 
         </aside>
 
 
-        <main class="admin-principal">
+        <main class="admin-main">
 
-            <header class="admin-encabezado">
+            <div class="admin-encabezado">
 
                 <div>
 
-                    <p class="admin-subtitulo">
-                        DR. CHULO
+                    <p class="etiqueta">
+                        ADMINISTRACIÓN
                     </p>
 
                     <h1>
-                        Panel administrativo
+                        Panel de control
                     </h1>
 
+                    <p>
+                        Administra la información principal
+                        de Dr. Chulo.
+                    </p>
+
                 </div>
 
-                <div class="admin-usuario">
-                    Administrador
-                </div>
-
-            </header>
+            </div>
 
 
-            <section class="admin-resumen">
+            <section class="admin-resumen-grid">
 
                 <article class="admin-resumen-tarjeta">
 
-                    <p>
-                        Productos
-                    </p>
+                    <span>
+                        PRODUCTOS
+                    </span>
 
-                    <h2 id="total-productos">
-                        8
-                    </h2>
-
-                    <a href="admin-productos.html">
-                        Gestionar productos
-                    </a>
+                    <strong id="admin-total-productos">
+                        0
+                    </strong>
 
                 </article>
 
 
                 <article class="admin-resumen-tarjeta">
 
-                    <p>
-                        Pedidos
-                    </p>
+                    <span>
+                        PEDIDOS
+                    </span>
 
-                    <h2>
-                        5
-                    </h2>
-
-                    <a href="admin-pedidos.html">
-                        Ver todos los pedidos
-                    </a>
+                    <strong id="admin-total-pedidos">
+                        0
+                    </strong>
 
                 </article>
 
 
                 <article class="admin-resumen-tarjeta">
 
-                    <p>
-                        Promociones
-                    </p>
+                    <span>
+                        PROMOCIONES
+                    </span>
 
-                    <h2>
-                        2
-                    </h2>
+                    <strong id="admin-total-promociones">
+                        0
+                    </strong>
 
-                    <a href="#promociones">
-                        Ver promociones
-                    </a>
+                </article>
+
+
+                <article class="admin-resumen-tarjeta">
+
+                    <span>
+                        CUPONES ACTIVOS
+                    </span>
+
+                    <strong id="admin-total-cupones">
+                        0
+                    </strong>
 
                 </article>
 
@@ -158,11 +156,87 @@
 
             <section class="admin-seccion">
 
-                <div class="admin-seccion-encabezado">
+                <h2>
+                    Administración rápida
+                </h2>
+
+
+                <div class="admin-accesos">
+
+                    <a
+                        href="admin-productos.html"
+                        class="admin-acceso"
+                    >
+
+                        <span>
+                            PRODUCTOS
+                        </span>
+
+                        <h3>
+                            Gestionar servicios
+                        </h3>
+
+                        <p>
+                            Agrega, modifica o elimina
+                            servicios del catálogo.
+                        </p>
+
+                    </a>
+
+
+                    <a
+                        href="admin-pedidos.html"
+                        class="admin-acceso"
+                    >
+
+                        <span>
+                            PEDIDOS
+                        </span>
+
+                        <h3>
+                            Gestionar pedidos
+                        </h3>
+
+                        <p>
+                            Edita clientes, estados,
+                            pagos, servicios y totales.
+                        </p>
+
+                    </a>
+
+
+                    <a
+                        href="admin-promociones.html"
+                        class="admin-acceso"
+                    >
+
+                        <span>
+                            PROMOCIONES
+                        </span>
+
+                        <h3>
+                            Promociones y cupones
+                        </h3>
+
+                        <p>
+                            Crea cupones, modifica descuentos
+                            y activa promociones.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <section class="admin-seccion">
+
+                <div class="admin-seccion-cabecera">
 
                     <div>
 
-                        <p class="admin-subtitulo">
+                        <p class="etiqueta">
                             ACTIVIDAD
                         </p>
 
@@ -175,197 +249,18 @@
 
                     <a
                         href="admin-pedidos.html"
-                        class="admin-boton-secundario"
+                        class="boton boton-secundario"
                     >
-                        Ver todos los pedidos
+                        Ver todos
                     </a>
 
                 </div>
 
 
-                <div class="admin-tabla-contenedor">
-
-                    <table class="admin-tabla">
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    Pedido
-                                </th>
-
-                                <th>
-                                    Cliente
-                                </th>
-
-                                <th>
-                                    Servicio
-                                </th>
-
-                                <th>
-                                    Total
-                                </th>
-
-                                <th>
-                                    Estado
-                                </th>
-
-                            </tr>
-
-                        </thead>
-
-
-                        <tbody>
-
-                            <tr>
-
-                                <td>
-                                    #0015
-                                </td>
-
-                                <td>
-                                    Carlos
-                                </td>
-
-                                <td>
-                                    Paquete Clásico
-                                </td>
-
-                                <td>
-                                    $250
-                                </td>
-
-                                <td>
-                                    <span class="estado pendiente">
-                                        Pendiente
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    #0014
-                                </td>
-
-                                <td>
-                                    Gustavo
-                                </td>
-
-                                <td>
-                                    Interior Completo
-                                </td>
-
-                                <td>
-                                    $1,200
-                                </td>
-
-                                <td>
-                                    <span class="estado proceso">
-                                        En proceso
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td>
-                                    #0013
-                                </td>
-
-                                <td>
-                                    Jordi
-                                </td>
-
-                                <td>
-                                    Restauración de faros
-                                </td>
-
-                                <td>
-                                    $450
-                                </td>
-
-                                <td>
-                                    <span class="estado terminado">
-                                        Terminado
-                                    </span>
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </section>
-
-
-            <section
-                class="admin-seccion"
-                id="promociones"
-            >
-
-                <div class="admin-seccion-encabezado">
-
-                    <div>
-
-                        <p class="admin-subtitulo">
-                            MARKETING
-                        </p>
-
-                        <h2>
-                            Promociones activas
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="admin-promociones">
-
-                    <article class="admin-promocion">
-
-                        <span>
-                            ACTIVA
-                        </span>
-
-                        <h3>
-                            Restauración de faros
-                        </h3>
-
-                        <p>
-                            Promoción especial en servicio
-                            de restauración de faros.
-                        </p>
-
-                    </article>
-
-
-                    <article class="admin-promocion">
-
-                        <span>
-                            ACTIVA
-                        </span>
-
-                        <h3>
-                            Protección exterior
-                        </h3>
-
-                        <p>
-                            Promoción en servicios seleccionados
-                            de protección exterior.
-                        </p>
-
-                    </article>
-
+                <div
+                    id="admin-pedidos-recientes"
+                    class="admin-tabla-responsive"
+                >
                 </div>
 
             </section>
@@ -375,7 +270,7 @@
     </div>
 
 
-    <script src="js/admin.js"></script>
+    <script src="js/admin-panel.js"></script>
 
 </body>
 
